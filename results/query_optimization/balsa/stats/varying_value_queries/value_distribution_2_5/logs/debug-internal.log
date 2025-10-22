@@ -1,0 +1,16 @@
+{"time":"2025-09-26T20:46:18.523972984+08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-09-26T20:46:18.524020203+08:00","level":"INFO","msg":"created symlink","path":"/home/zizhongmeng/balsa/wandb/run-20250926_204618-bmk4see8/logs/debug-core.log"}
+{"time":"2025-09-26T20:46:18.640481633+08:00","level":"INFO","msg":"created new stream","id":"bmk4see8"}
+{"time":"2025-09-26T20:46:18.640549227+08:00","level":"INFO","msg":"stream: started","id":"bmk4see8"}
+{"time":"2025-09-26T20:46:18.640676502+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"bmk4see8"}
+{"time":"2025-09-26T20:46:18.640849143+08:00","level":"INFO","msg":"handler: started","stream_id":"bmk4see8"}
+{"time":"2025-09-26T20:46:18.64091285+08:00","level":"INFO","msg":"sender: started","stream_id":"bmk4see8"}
+{"time":"2025-09-26T20:46:19.451927483+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-09-26T20:55:16.684836142+08:00","level":"INFO","msg":"stream: closing","id":"bmk4see8"}
+{"time":"2025-09-26T20:55:16.684918543+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-09-26T20:55:16.686445241+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-09-26T20:55:19.836435706+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-09-26T20:55:21.192520952+08:00","level":"INFO","msg":"handler: closed","stream_id":"bmk4see8"}
+{"time":"2025-09-26T20:55:21.192610854+08:00","level":"INFO","msg":"sender: closed","stream_id":"bmk4see8"}
+{"time":"2025-09-26T20:55:21.192601385+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"bmk4see8"}
+{"time":"2025-09-26T20:55:21.192793451+08:00","level":"INFO","msg":"stream: closed","id":"bmk4see8"}

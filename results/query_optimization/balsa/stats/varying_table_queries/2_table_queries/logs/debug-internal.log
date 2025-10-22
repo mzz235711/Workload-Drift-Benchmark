@@ -1,0 +1,16 @@
+{"time":"2025-09-06T05:58:01.410182486+08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-09-06T05:58:01.410203086+08:00","level":"INFO","msg":"created symlink","path":"/home/zizhongmeng/balsa/wandb/run-20250906_055801-iptp4hzf/logs/debug-core.log"}
+{"time":"2025-09-06T05:58:01.537589186+08:00","level":"INFO","msg":"created new stream","id":"iptp4hzf"}
+{"time":"2025-09-06T05:58:01.537619986+08:00","level":"INFO","msg":"stream: started","id":"iptp4hzf"}
+{"time":"2025-09-06T05:58:01.537651086+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"iptp4hzf"}
+{"time":"2025-09-06T05:58:01.537727186+08:00","level":"INFO","msg":"handler: started","stream_id":"iptp4hzf"}
+{"time":"2025-09-06T05:58:01.537820386+08:00","level":"INFO","msg":"sender: started","stream_id":"iptp4hzf"}
+{"time":"2025-09-06T05:58:02.270744227+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-09-06T09:53:55.802574978+08:00","level":"INFO","msg":"stream: closing","id":"iptp4hzf"}
+{"time":"2025-09-06T09:53:55.802649778+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-09-06T09:53:55.805155071+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-09-06T09:54:05.312408936+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-09-06T09:54:05.943781861+08:00","level":"INFO","msg":"handler: closed","stream_id":"iptp4hzf"}
+{"time":"2025-09-06T09:54:05.943808261+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"iptp4hzf"}
+{"time":"2025-09-06T09:54:05.944266262+08:00","level":"INFO","msg":"sender: closed","stream_id":"iptp4hzf"}
+{"time":"2025-09-06T09:54:05.944295262+08:00","level":"INFO","msg":"stream: closed","id":"iptp4hzf"}

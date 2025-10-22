@@ -1,0 +1,11 @@
+{"time":"2025-09-23T09:41:51.149070656+08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-09-23T09:41:51.149112556+08:00","level":"INFO","msg":"created symlink","path":"/home/zizhongmeng/balsa/wandb/run-20250923_094151-r0bjx1v7/logs/debug-core.log"}
+{"time":"2025-09-23T09:41:51.273701747+08:00","level":"INFO","msg":"created new stream","id":"r0bjx1v7"}
+{"time":"2025-09-23T09:41:51.273739547+08:00","level":"INFO","msg":"stream: started","id":"r0bjx1v7"}
+{"time":"2025-09-23T09:41:51.273773447+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"r0bjx1v7"}
+{"time":"2025-09-23T09:41:51.273788347+08:00","level":"INFO","msg":"handler: started","stream_id":"r0bjx1v7"}
+{"time":"2025-09-23T09:41:51.273804047+08:00","level":"INFO","msg":"sender: started","stream_id":"r0bjx1v7"}
+{"time":"2025-09-23T09:41:51.919896817+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-09-23T11:30:18.482259574+08:00","level":"INFO","msg":"stream: closing","id":"r0bjx1v7"}
+{"time":"2025-09-23T11:30:18.482373474+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-09-23T11:30:18.483582673+08:00","level":"INFO","msg":"Stopped system monitor"}

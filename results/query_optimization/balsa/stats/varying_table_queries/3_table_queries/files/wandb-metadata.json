@@ -1,0 +1,47 @@
+{
+  "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-debian-trixie-sid",
+  "python": "3.7.12",
+  "startedAt": "2025-09-06T06:07:37.063034Z",
+  "args": [
+    "--run",
+    "Balsa_STATSRandSplit",
+    "--local"
+  ],
+  "program": "run.py",
+  "codePath": "run.py",
+  "git": {
+    "remote": "git@github.com:mzz235711/balsa.git",
+    "commit": "a0b45f2371c8c569bb90ad611f39911e5b850852"
+  },
+  "email": "mengzizhong@gmail.com",
+  "root": "/home/zizhongmeng/balsa",
+  "host": "DESKTOP-HQH2TMV",
+  "username": "zizhongmeng",
+  "executable": "/home/zizhongmeng/miniconda3/envs/balsa/bin/python",
+  "codePathLocal": "run.py",
+  "cpu_count": 4,
+  "cpu_count_logical": 8,
+  "gpu": "NVIDIA GeForce RTX 4070",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "1081101176832",
+      "used": "65063403520"
+    }
+  },
+  "memory": {
+    "total": "25201692672"
+  },
+  "cpu": {
+    "count": 4,
+    "countLogical": 8
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4070",
+      "memoryTotal": "12878610432",
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.9"
+}

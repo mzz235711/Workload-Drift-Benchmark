@@ -1,0 +1,8 @@
+/*+ NestLoop(title movie_companies cast_info)
+ NestLoop(title movie_companies)
+ IndexScan(title)
+ IndexScan(movie_companies)
+ IndexScan(cast_info)
+ Leading(((title movie_companies) cast_info)) */
+select count(*) from movie_companies,cast_info,title where title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_companies.company_type_id=2 and title.season_nr<1 and title.series_years<1381 and title.episode_nr<600 and title.production_year>80;
+

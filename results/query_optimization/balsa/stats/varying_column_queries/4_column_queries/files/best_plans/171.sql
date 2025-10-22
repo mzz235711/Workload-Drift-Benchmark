@@ -1,0 +1,6 @@
+/*+ HashJoin(c pl)
+ SeqScan(c)
+ SeqScan(pl)
+ Leading((c pl)) */
+SELECT COUNT(*) FROM comments as c, postLinks as pl WHERE c.PostId= pl.PostId AND c.Score=0 AND c.CreationDate<='2014-09-10 18:25:45'::timestamp AND pl.LinkTypeId=1 AND pl.CreationDate<='2014-08-26 14:40:37'::timestamp;
+

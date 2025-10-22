@@ -1,0 +1,16 @@
+{"time":"2025-09-23T04:18:07.916101165+08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-09-23T04:18:07.916138657+08:00","level":"INFO","msg":"created symlink","path":"/home/zizhongmeng/balsa/wandb/run-20250923_041807-uj2w7lqm/logs/debug-core.log"}
+{"time":"2025-09-23T04:18:08.040422982+08:00","level":"INFO","msg":"created new stream","id":"uj2w7lqm"}
+{"time":"2025-09-23T04:18:08.040458549+08:00","level":"INFO","msg":"stream: started","id":"uj2w7lqm"}
+{"time":"2025-09-23T04:18:08.040481924+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"uj2w7lqm"}
+{"time":"2025-09-23T04:18:08.040505207+08:00","level":"INFO","msg":"handler: started","stream_id":"uj2w7lqm"}
+{"time":"2025-09-23T04:18:08.04053234+08:00","level":"INFO","msg":"sender: started","stream_id":"uj2w7lqm"}
+{"time":"2025-09-23T04:18:08.799627032+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-09-23T06:34:28.337169666+08:00","level":"INFO","msg":"stream: closing","id":"uj2w7lqm"}
+{"time":"2025-09-23T06:34:28.337296956+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-09-23T06:34:28.338924855+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-09-23T06:34:34.285536878+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-09-23T06:34:35.638452047+08:00","level":"INFO","msg":"handler: closed","stream_id":"uj2w7lqm"}
+{"time":"2025-09-23T06:34:35.638481816+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"uj2w7lqm"}
+{"time":"2025-09-23T06:34:35.6385603+08:00","level":"INFO","msg":"sender: closed","stream_id":"uj2w7lqm"}
+{"time":"2025-09-23T06:34:35.638585776+08:00","level":"INFO","msg":"stream: closed","id":"uj2w7lqm"}

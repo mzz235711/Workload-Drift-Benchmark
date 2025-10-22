@@ -1,0 +1,8 @@
+/*+ HashJoin(c u b)
+ MergeJoin(c u)
+ IndexScan(c)
+ SeqScan(u)
+ SeqScan(b)
+ Leading(((c u) b)) */
+SELECT COUNT(*) FROM comments as c, badges as b, users as u WHERE u.Id = c.UserId AND c.UserId = b.UserId AND c.CreationDate>='2010-07-21 11:58:10'::timestamp AND u.DownVotes>=0 AND u.UpVotes>=0;
+

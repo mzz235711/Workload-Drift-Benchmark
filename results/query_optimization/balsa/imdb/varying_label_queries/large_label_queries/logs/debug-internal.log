@@ -1,0 +1,17 @@
+{"time":"2025-09-22T11:58:21.039645045+08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-09-22T11:58:21.039667945+08:00","level":"INFO","msg":"created symlink","path":"/home/zizhongmeng/balsa/wandb/run-20250922_115821-n8rssbjl/logs/debug-core.log"}
+{"time":"2025-09-22T11:58:21.166932212+08:00","level":"INFO","msg":"created new stream","id":"n8rssbjl"}
+{"time":"2025-09-22T11:58:21.166966612+08:00","level":"INFO","msg":"stream: started","id":"n8rssbjl"}
+{"time":"2025-09-22T11:58:21.166995112+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"n8rssbjl"}
+{"time":"2025-09-22T11:58:21.167021212+08:00","level":"INFO","msg":"handler: started","stream_id":"n8rssbjl"}
+{"time":"2025-09-22T11:58:21.167084812+08:00","level":"INFO","msg":"sender: started","stream_id":"n8rssbjl"}
+{"time":"2025-09-22T11:58:21.843616036+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-09-22T13:03:12.025827456+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/mengzizhong-nanyang-technological-university-singapore/balsa/n8rssbjl/file_stream\": unexpected EOF"}
+{"time":"2025-09-22T13:55:21.117519673+08:00","level":"INFO","msg":"stream: closing","id":"n8rssbjl"}
+{"time":"2025-09-22T13:55:21.117594874+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-09-22T13:55:21.119269679+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-09-22T13:55:28.377562836+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-09-22T13:55:28.952311793+08:00","level":"INFO","msg":"handler: closed","stream_id":"n8rssbjl"}
+{"time":"2025-09-22T13:55:28.952342193+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"n8rssbjl"}
+{"time":"2025-09-22T13:55:28.952384593+08:00","level":"INFO","msg":"sender: closed","stream_id":"n8rssbjl"}
+{"time":"2025-09-22T13:55:28.952404393+08:00","level":"INFO","msg":"stream: closed","id":"n8rssbjl"}

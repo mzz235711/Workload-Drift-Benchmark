@@ -1,0 +1,50 @@
+{"time":"2025-09-01T00:51:48.255953052+08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-09-01T00:51:48.256004872+08:00","level":"INFO","msg":"created symlink","path":"/home/zizhongmeng/balsa/wandb/run-20250901_005148-0zmbtir6/logs/debug-core.log"}
+{"time":"2025-09-01T00:51:48.675968786+08:00","level":"INFO","msg":"created new stream","id":"0zmbtir6"}
+{"time":"2025-09-01T00:51:48.676039884+08:00","level":"INFO","msg":"stream: started","id":"0zmbtir6"}
+{"time":"2025-09-01T00:51:48.676172264+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"0zmbtir6"}
+{"time":"2025-09-01T00:51:48.676330598+08:00","level":"INFO","msg":"handler: started","stream_id":"0zmbtir6"}
+{"time":"2025-09-01T00:51:48.676258638+08:00","level":"INFO","msg":"sender: started","stream_id":"0zmbtir6"}
+{"time":"2025-09-01T00:51:49.424994775+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-09-01T15:51:12.81745565+08:00","level":"WARN","msg":"sender: taking a long time","seconds":600.000863905,"work":"WorkRecord(*service_go_proto.Record_Files); Control(connection_id:\"127.0.0.1:35392\")"}
+{"time":"2025-09-01T15:51:12.968135852+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":600.000440103,"work":"WorkRecord(*service_go_proto.Record_Files); Control(connection_id:\"127.0.0.1:35392\")"}
+{"time":"2025-09-01T15:51:19.426357739+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":600.000480374,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T15:51:19.426393168+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":600.000449469,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T15:51:19.426480664+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":600.000142947,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T15:51:19.432712141+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":600.000598613,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T15:51:19.787969897+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":600.000106156,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:01:12.830400675+08:00","level":"WARN","msg":"sender: taking a long time","seconds":1200.013975403,"work":"WorkRecord(*service_go_proto.Record_Files); Control(connection_id:\"127.0.0.1:35392\")"}
+{"time":"2025-09-01T16:01:12.969439314+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":1200.001755666,"work":"WorkRecord(*service_go_proto.Record_Files); Control(connection_id:\"127.0.0.1:35392\")"}
+{"time":"2025-09-01T16:01:19.427012868+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":1200.001064857,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:01:19.42701404+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":1200.001138933,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:01:19.427054457+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":1200.000722624,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:01:19.433331128+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":1200.001235154,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:01:19.788746581+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":1200.000898346,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:11:12.83188065+08:00","level":"WARN","msg":"sender: taking a long time","seconds":1800.015412706,"work":"WorkRecord(*service_go_proto.Record_Files); Control(connection_id:\"127.0.0.1:35392\")"}
+{"time":"2025-09-01T16:11:12.971382975+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":1800.003710677,"work":"WorkRecord(*service_go_proto.Record_Files); Control(connection_id:\"127.0.0.1:35392\")"}
+{"time":"2025-09-01T16:11:19.428309501+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":1800.002470573,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:11:19.428310149+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":1800.002352792,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:11:19.428327453+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":1800.001938721,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:11:19.434511457+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":1800.002409168,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:11:19.789094781+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":1800.001226255,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:21:12.839047559+08:00","level":"WARN","msg":"sender: taking a long time","seconds":2400.022632373,"work":"WorkRecord(*service_go_proto.Record_Files); Control(connection_id:\"127.0.0.1:35392\")"}
+{"time":"2025-09-01T16:21:12.973343997+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":2400.005654362,"work":"WorkRecord(*service_go_proto.Record_Files); Control(connection_id:\"127.0.0.1:35392\")"}
+{"time":"2025-09-01T16:21:19.428862887+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":2400.002509903,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:21:19.428881488+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":2400.003021052,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:21:19.428900783+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":2400.002957972,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:21:19.435304997+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":2400.003189154,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:21:19.789396698+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":2400.001556484,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:31:12.849997212+08:00","level":"WARN","msg":"sender: taking a long time","seconds":3000.033539069,"work":"WorkRecord(*service_go_proto.Record_Files); Control(connection_id:\"127.0.0.1:35392\")"}
+{"time":"2025-09-01T16:31:12.974686806+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":3000.006969256,"work":"WorkRecord(*service_go_proto.Record_Files); Control(connection_id:\"127.0.0.1:35392\")"}
+{"time":"2025-09-01T16:31:19.429147718+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":3000.002729735,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:31:19.429226922+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":3000.003220547,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:31:19.429260282+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":3000.003420758,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:31:19.436516143+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":3000.004405638,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:31:19.790061116+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":3000.002222827,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:41:12.861764788+08:00","level":"WARN","msg":"sender: taking a long time","seconds":3600.045345744,"work":"WorkRecord(*service_go_proto.Record_Files); Control(connection_id:\"127.0.0.1:35392\")"}
+{"time":"2025-09-01T16:41:12.976390009+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":3600.0086998,"work":"WorkRecord(*service_go_proto.Record_Files); Control(connection_id:\"127.0.0.1:35392\")"}
+{"time":"2025-09-01T16:41:19.429446156+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":3600.003455698,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:41:19.429459907+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":3600.003614316,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:41:19.429533087+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":3600.003202133,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:41:19.436787556+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":3600.004673347,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}
+{"time":"2025-09-01T16:41:19.791230374+08:00","level":"WARN","msg":"runwork: taking a long time","seconds":3600.0033596,"work":"WorkRecord(*service_go_proto.Record_Stats); Control(always_send:true)"}

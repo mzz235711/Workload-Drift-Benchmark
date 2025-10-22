@@ -1,0 +1,2194 @@
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from cast_info,movie_info_idx,movie_keyword,movie_companies,title where title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and movie_info_idx.info_type_id>99 and movie_keyword.keyword_id>7 and movie_companies.company_type_id=2 and title.production_year<73 and title.phonetic_code>3667 and title.season_nr>0;
+
+/*+ MergeJoin(title movie_companies movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from movie_info_idx,movie_keyword,cast_info,movie_companies,title where title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and movie_info_idx.info_type_id<101 and cast_info.nr_order<50 and title.production_year<127 and title.imdb_index>0 and title.kind_id<7 and title.season_nr=0;
+
+/*+ NestLoop(title movie_companies cast_info movie_info)
+ NestLoop(title movie_companies cast_info)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) cast_info) movie_info)) */
+select count(*) from movie_companies,movie_info,cast_info,title where title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_companies.company_type_id=1 and movie_info.info_type_id<16 and cast_info.nr_order<1 and title.phonetic_code>5326 and title.production_year<26 and title.season_nr>0;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ HashJoin(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_companies,movie_info,movie_keyword,cast_info,title where title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and movie_companies.company_type_id=1 and movie_keyword.keyword_id<85206 and cast_info.nr_order<1000 and title.episode_nr>0 and title.production_year<114 and title.phonetic_code>1579;
+
+/*+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ Leading(((title movie_info_idx) movie_keyword)) */
+select count(*) from movie_info_idx,movie_keyword,title where title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and movie_info_idx.info_type_id<101 and movie_keyword.keyword_id>3 and title.season_nr>0 and title.production_year>99 and title.episode_nr>0 and title.kind_id>2;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info,movie_keyword,movie_companies,cast_info,title where title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id>820 and movie_companies.company_type_id=2 and cast_info.role_id>1 and title.imdb_index>0 and title.kind_id>2 and title.phonetic_code>718;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info_idx)
+ Leading((((title movie_companies) movie_keyword) movie_info_idx)) */
+select count(*) from movie_keyword,movie_info_idx,movie_companies,title where title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id<130892 and movie_info_idx.info_type_id=100 and movie_companies.company_type_id>1 and title.episode_nr>0 and title.season_nr>0 and title.phonetic_code>18430;
+
+/*+ MergeJoin(title movie_companies movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from cast_info,movie_keyword,movie_info_idx,movie_companies,title where title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and cast_info.nr_order<30 and movie_keyword.keyword_id<1035 and movie_companies.company_type_id<2 and title.phonetic_code<5685 and title.kind_id<7 and title.episode_nr<15;
+
+/*+ NestLoop(title movie_keyword cast_info movie_info)
+ NestLoop(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info,movie_keyword,cast_info,title where title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and movie_info.info_type_id>2 and movie_keyword.keyword_id>950 and title.season_nr=0 and title.series_years>0 and title.kind_id>1 and title.phonetic_code>17182;
+
+/*+ NestLoop(title movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_keyword movie_info_idx)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading((((title movie_keyword) movie_info_idx) cast_info)) */
+select count(*) from movie_info_idx,cast_info,movie_keyword,title where title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and cast_info.nr_order<38 and movie_keyword.keyword_id<13000 and title.kind_id=7 and title.production_year>121 and title.phonetic_code<7803 and title.episode_nr<2;
+
+/*+ NestLoop(title movie_keyword cast_info movie_info)
+ NestLoop(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info,cast_info,movie_keyword,title where title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and movie_info.info_type_id<63 and movie_keyword.keyword_id<4960 and title.imdb_index=0 and title.kind_id>1 and title.production_year<118 and title.season_nr>0;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) cast_info)) */
+select count(*) from cast_info,movie_companies,movie_keyword,movie_info_idx,title where title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and cast_info.nr_order>1 and movie_keyword.keyword_id>460 and movie_info_idx.info_type_id>99 and title.kind_id=7 and title.episode_nr<7 and title.phonetic_code>17599;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_companies,cast_info,movie_info,movie_info_idx,title where title.id=movie_companies.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id>1 and movie_info.info_type_id>2 and movie_info_idx.info_type_id=99 and title.production_year<118 and title.imdb_index=0 and title.season_nr>0;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_keyword,cast_info,movie_info,title where title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and movie_info_idx.info_type_id<101 and movie_keyword.keyword_id>1 and cast_info.nr_order<6 and title.phonetic_code<4679 and title.imdb_index>0 and title.series_years>0;
+
+/*+ NestLoop(title movie_keyword movie_info_idx cast_info movie_info)
+ NestLoop(title movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_keyword movie_info_idx)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_keyword) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_keyword,cast_info,movie_info,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_keyword.keyword_id>249 and cast_info.role_id=10 and movie_info.info_type_id<107 and movie_info_idx.info_type_id=99 and title.season_nr>0 and title.phonetic_code>8312;
+
+/*+ NestLoop(title movie_keyword cast_info movie_info)
+ NestLoop(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,movie_info,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id>463 and movie_info.info_type_id>2 and title.season_nr<7 and title.series_years>0 and title.production_year<110 and title.imdb_index>0;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from cast_info,movie_info_idx,movie_info,movie_keyword,title where title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and cast_info.role_id=1 and movie_info_idx.info_type_id>99 and movie_info.info_type_id>1 and movie_keyword.keyword_id>13391 and title.season_nr>2 and title.phonetic_code<3483;
+
+/*+ HashJoin(title movie_companies movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ SeqScan(cast_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) cast_info)) */
+select count(*) from movie_info_idx,cast_info,movie_companies,movie_keyword,title where title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and movie_info_idx.info_type_id<101 and cast_info.nr_order>1 and movie_companies.company_type_id>1 and title.production_year>112 and title.kind_id<7 and title.episode_nr<3;
+
+/*+ MergeJoin(title movie_info_idx movie_companies movie_info movie_keyword)
+ MergeJoin(title movie_info_idx movie_companies movie_info)
+ MergeJoin(title movie_info_idx movie_companies)
+ MergeJoin(title movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ SeqScan(movie_companies)
+ IndexScan(movie_info)
+ IndexScan(movie_keyword)
+ Leading(((((title movie_info_idx) movie_companies) movie_info) movie_keyword)) */
+select count(*) from movie_keyword,movie_companies,movie_info,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id<2 and movie_info.info_type_id>2 and title.production_year>51 and title.episode_nr>0 and title.phonetic_code<19425 and title.imdb_index=0;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_info,movie_keyword,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and movie_info_idx.info_type_id>99 and cast_info.nr_order>1 and title.kind_id<7 and title.season_nr<2 and title.production_year>120 and title.imdb_index>0;
+
+/*+ NestLoop(title movie_companies cast_info movie_info)
+ NestLoop(title movie_companies cast_info)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) cast_info) movie_info)) */
+select count(*) from movie_info,movie_companies,cast_info,title where title.id=movie_info.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_info.info_type_id<98 and movie_companies.company_type_id=2 and title.imdb_index>0 and title.production_year<112 and title.phonetic_code>1446 and title.season_nr=0;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading((((title movie_companies) movie_info_idx) cast_info)) */
+select count(*) from movie_info_idx,movie_companies,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_info_idx.info_type_id=101 and movie_companies.company_type_id<2 and cast_info.role_id>1 and title.imdb_index=0 and title.kind_id>1 and title.series_years>0;
+
+/*+ NestLoop(title movie_info_idx movie_companies movie_info)
+ NestLoop(title movie_info_idx movie_companies)
+ NestLoop(title movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_companies)
+ IndexScan(movie_info)
+ Leading((((title movie_info_idx) movie_companies) movie_info)) */
+select count(*) from movie_companies,movie_info,movie_info_idx,title where title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_info.info_type_id>2 and movie_info_idx.info_type_id>99 and title.phonetic_code<16973 and title.production_year>120 and title.kind_id=1 and title.imdb_index=0;
+
+/*+ MergeJoin(movie_info_idx title movie_companies movie_keyword movie_info)
+ MergeJoin(movie_info_idx title movie_companies movie_keyword)
+ MergeJoin(movie_info_idx title movie_companies)
+ MergeJoin(movie_info_idx title)
+ IndexScan(movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info)
+ Leading(((((movie_info_idx title) movie_companies) movie_keyword) movie_info)) */
+select count(*) from movie_keyword,movie_info_idx,movie_info,movie_companies,title where title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id<73464 and movie_info_idx.info_type_id>99 and movie_info.info_type_id<106 and title.phonetic_code>1196 and title.production_year>116 and title.kind_id=1;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ HashJoin(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ NestLoop(title movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info,movie_keyword,cast_info,movie_info_idx,title where title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and movie_info.info_type_id<18 and cast_info.nr_order<31 and title.season_nr=0 and title.kind_id>3 and title.production_year>95 and title.phonetic_code<11919;
+
+/*+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ Leading(((title movie_companies) movie_info_idx)) */
+select count(*) from movie_companies,movie_info_idx,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id=1 and movie_info_idx.info_type_id>99 and title.season_nr=1 and title.imdb_index=0 and title.production_year<70 and title.phonetic_code<2962;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,cast_info,movie_info,movie_companies,title where title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and movie_info.info_type_id<98 and movie_companies.company_type_id<2 and title.phonetic_code<217 and title.imdb_index>0 and title.production_year<110 and title.episode_nr<7;
+
+/*+ NestLoop(title movie_keyword movie_info_idx movie_info)
+ NestLoop(title movie_keyword movie_info_idx)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) movie_info_idx) movie_info)) */
+select count(*) from movie_info,movie_info_idx,movie_keyword,title where title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and movie_info.info_type_id<106 and movie_keyword.keyword_id<38978 and title.series_years>0 and title.phonetic_code>5976 and title.imdb_index>0 and title.season_nr=0;
+
+/*+ NestLoop(title movie_info_idx cast_info movie_info)
+ NestLoop(title movie_info_idx cast_info)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_info_idx) cast_info) movie_info)) */
+select count(*) from cast_info,movie_info,movie_info_idx,title where title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and cast_info.nr_order<21 and movie_info.info_type_id>1 and movie_info_idx.info_type_id>99 and title.season_nr=0 and title.series_years>0 and title.imdb_index>0;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_keyword,movie_info,movie_info_idx,movie_companies,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id<46138 and movie_info.info_type_id<97 and movie_companies.company_type_id=1 and title.phonetic_code>5301 and title.imdb_index>0 and title.production_year<107;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ HashJoin(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from cast_info,movie_companies,movie_keyword,movie_info,title where title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and movie_companies.company_type_id<2 and movie_info.info_type_id<18 and title.production_year>124 and title.imdb_index=0 and title.phonetic_code<3991 and title.kind_id>1;
+
+/*+ HashJoin(title movie_companies movie_keyword cast_info movie_info)
+ HashJoin(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,movie_info,cast_info,movie_companies,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id>245 and movie_info.info_type_id<107 and cast_info.nr_order>1 and movie_companies.company_type_id>1 and title.phonetic_code>11390 and title.kind_id>3;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from cast_info,movie_keyword,movie_info,movie_companies,title where title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id>359 and movie_info.info_type_id>2 and title.series_years>0 and title.episode_nr<81 and title.imdb_index>0 and title.season_nr<4;
+
+/*+ NestLoop(title movie_companies cast_info movie_info)
+ NestLoop(title movie_companies cast_info)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) cast_info) movie_info)) */
+select count(*) from movie_info,cast_info,movie_companies,title where title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and movie_info.info_type_id>2 and movie_companies.company_type_id=1 and title.season_nr=0 and title.phonetic_code>3199 and title.series_years>0 and title.production_year>87;
+
+/*+ MergeJoin(movie_keyword cast_info movie_info_idx title movie_companies)
+ MergeJoin(cast_info movie_info_idx title movie_companies)
+ MergeJoin(movie_info_idx title movie_companies)
+ NestLoop(title movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ Leading((movie_keyword (cast_info (movie_info_idx (title movie_companies))))) */
+select count(*) from movie_companies,cast_info,movie_keyword,movie_info_idx,title where title.id=movie_companies.movie_id and title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id>1 and cast_info.role_id=1 and movie_keyword.keyword_id>137 and title.kind_id=1 and title.phonetic_code>12110 and title.imdb_index=0;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,movie_info,cast_info,movie_companies,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id>1732 and movie_info.info_type_id<16 and cast_info.role_id>1 and title.imdb_index=0 and title.phonetic_code<1484 and title.series_years>0;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) cast_info)) */
+select count(*) from cast_info,movie_companies,movie_info_idx,movie_keyword,title where title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and cast_info.nr_order>1 and movie_keyword.keyword_id>745 and title.series_years>0 and title.phonetic_code<12477 and title.production_year<123 and title.episode_nr<13;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) movie_keyword) movie_info)) */
+select count(*) from movie_companies,movie_info,movie_keyword,title where title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and movie_companies.company_type_id=1 and movie_info.info_type_id<103 and movie_keyword.keyword_id>245 and title.phonetic_code<883 and title.production_year<123 and title.imdb_index=0;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_companies,movie_info_idx,cast_info,movie_info,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and movie_companies.company_type_id=2 and cast_info.role_id<10 and movie_info.info_type_id>16 and title.imdb_index=0 and title.series_years>0 and title.phonetic_code>6049;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info_idx,cast_info,movie_info,movie_keyword,title where title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and movie_info_idx.info_type_id<101 and cast_info.role_id=3 and title.phonetic_code<20612 and title.kind_id<7 and title.episode_nr<13346 and title.series_years>0;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ HashJoin(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,movie_info,cast_info,movie_companies,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and movie_info.info_type_id<98 and movie_companies.company_type_id<2 and title.phonetic_code>1460 and title.season_nr<3 and title.series_years>0 and title.kind_id<7;
+
+/*+ NestLoop(title movie_keyword cast_info movie_info)
+ NestLoop(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,movie_info,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id>1028 and cast_info.nr_order>0 and title.production_year<127 and title.season_nr=4 and title.kind_id=7 and title.episode_nr>5;
+
+/*+ NestLoop(title movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_keyword movie_info_idx)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading((((title movie_keyword) movie_info_idx) cast_info)) */
+select count(*) from movie_keyword,movie_info_idx,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id>1 and movie_info_idx.info_type_id>99 and cast_info.role_id<10 and title.imdb_index=0 and title.episode_nr>0 and title.season_nr>0;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_info,movie_companies,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_info.info_type_id>2 and movie_companies.company_type_id<2 and cast_info.nr_order>0 and title.episode_nr>4 and title.imdb_index=0 and title.production_year>124;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) movie_keyword) movie_info)) */
+select count(*) from movie_companies,movie_info,movie_keyword,title where title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and movie_info.info_type_id>1 and movie_keyword.keyword_id<53422 and title.phonetic_code<3182 and title.imdb_index>0 and title.series_years>0 and title.season_nr<10;
+
+/*+ HashJoin(title movie_companies movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ SeqScan(cast_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) cast_info)) */
+select count(*) from movie_info_idx,cast_info,movie_keyword,movie_companies,title where title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and movie_info_idx.info_type_id=100 and cast_info.nr_order>1 and title.season_nr<2 and title.kind_id>1 and title.episode_nr<127 and title.phonetic_code<20806;
+
+/*+ NestLoop(title movie_keyword movie_companies cast_info movie_info)
+ NestLoop(title movie_keyword movie_companies cast_info)
+ HashJoin(title movie_keyword movie_companies)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(movie_companies)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_keyword) movie_companies) cast_info) movie_info)) */
+select count(*) from movie_companies,movie_keyword,movie_info,cast_info,title where title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id>585 and cast_info.role_id>1 and title.series_years>0 and title.phonetic_code<11797 and title.imdb_index>0 and title.episode_nr<10;
+
+/*+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ Leading(((title movie_companies) movie_info_idx)) */
+select count(*) from movie_info_idx,movie_companies,title where title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and movie_info_idx.info_type_id=99 and movie_companies.company_type_id>1 and title.production_year<113 and title.kind_id=7 and title.episode_nr<4 and title.season_nr=1;
+
+/*+ NestLoop(title movie_keyword movie_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((title movie_keyword) movie_info)) */
+select count(*) from movie_keyword,movie_info,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id<41212 and movie_info.info_type_id>7 and title.phonetic_code>18311 and title.production_year<84 and title.imdb_index>0 and title.kind_id=1;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ HashJoin(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ SeqScan(movie_info_idx)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_companies,cast_info,movie_info,movie_info_idx,title where title.id=movie_companies.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id=1 and cast_info.role_id=5 and movie_info.info_type_id>1 and title.production_year>120 and title.season_nr=0 and title.phonetic_code>1922;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_companies,movie_info_idx,movie_info,movie_keyword,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and movie_companies.company_type_id<2 and movie_info.info_type_id>1 and title.kind_id=7 and title.episode_nr<41 and title.production_year>111 and title.phonetic_code>0;
+
+/*+ NestLoop(title movie_companies movie_info)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info)
+ Leading(((title movie_companies) movie_info)) */
+select count(*) from movie_companies,movie_info,title where title.id=movie_companies.movie_id and title.id=movie_info.movie_id and movie_companies.company_type_id<2 and movie_info.info_type_id<107 and title.series_years>0 and title.production_year<121 and title.phonetic_code>8047 and title.season_nr=0;
+
+/*+ HashJoin(movie_keyword title movie_companies cast_info movie_info)
+ HashJoin(movie_keyword title movie_companies cast_info)
+ HashJoin(movie_keyword title movie_companies)
+ NestLoop(title movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((movie_keyword (title movie_companies)) cast_info) movie_info)) */
+select count(*) from movie_keyword,movie_companies,movie_info,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id<67699 and movie_info.info_type_id<16 and title.kind_id=7 and title.season_nr>0 and title.phonetic_code<18263 and title.imdb_index=0;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ HashJoin(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_info,movie_info_idx,movie_companies,movie_keyword,title where title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and movie_info_idx.info_type_id=101 and movie_companies.company_type_id=2 and movie_keyword.keyword_id<21233 and title.production_year>114 and title.series_years>0 and title.phonetic_code>761;
+
+/*+ MergeJoin(cast_info title movie_info movie_keyword)
+ MergeJoin(title movie_info movie_keyword)
+ MergeJoin(title movie_info)
+ SeqScan(cast_info)
+ IndexScan(title)
+ SeqScan(movie_info)
+ SeqScan(movie_keyword)
+ Leading((cast_info ((title movie_info) movie_keyword))) */
+select count(*) from cast_info,movie_keyword,movie_info,title where title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id<83041 and movie_info.info_type_id<107 and title.production_year>109 and title.kind_id=1 and title.phonetic_code>16820 and title.season_nr=0;
+
+/*+ MergeJoin(movie_companies title movie_info_idx movie_info movie_keyword)
+ MergeJoin(movie_companies title movie_info_idx movie_info)
+ MergeJoin(movie_companies title movie_info_idx)
+ MergeJoin(movie_companies title)
+ SeqScan(movie_companies)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_info)
+ IndexScan(movie_keyword)
+ Leading(((((movie_companies title) movie_info_idx) movie_info) movie_keyword)) */
+select count(*) from movie_info,movie_companies,movie_info_idx,movie_keyword,title where title.id=movie_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and movie_info.info_type_id>3 and movie_companies.company_type_id>1 and title.season_nr=0 and title.kind_id=1 and title.production_year>0 and title.phonetic_code<16649;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading((((title movie_companies) movie_info_idx) cast_info)) */
+select count(*) from movie_info_idx,movie_companies,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_info_idx.info_type_id=101 and movie_companies.company_type_id=1 and title.episode_nr<8 and title.phonetic_code>20409 and title.kind_id<7 and title.production_year<120;
+
+/*+ MergeJoin(title movie_companies movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_keyword,movie_companies,movie_info,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_keyword.keyword_id>103 and movie_info.info_type_id>2 and title.series_years<1366 and title.episode_nr<50 and title.season_nr>0 and title.production_year<127;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ HashJoin(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ NestLoop(title movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info,movie_keyword,movie_info_idx,cast_info,title where title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and movie_info.info_type_id>1 and movie_info_idx.info_type_id=100 and cast_info.role_id<9 and title.kind_id>1 and title.production_year<123 and title.series_years>0;
+
+/*+ MergeJoin(movie_keyword title movie_companies cast_info movie_info)
+ HashJoin(movie_keyword title movie_companies cast_info)
+ HashJoin(movie_keyword title movie_companies)
+ NestLoop(title movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((movie_keyword (title movie_companies)) cast_info) movie_info)) */
+select count(*) from cast_info,movie_keyword,movie_companies,movie_info,title where title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and cast_info.nr_order>2 and movie_info.info_type_id>2 and title.phonetic_code<14595 and title.imdb_index>0 and title.season_nr<1 and title.kind_id<7;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info_idx)
+ Leading((((title movie_companies) movie_keyword) movie_info_idx)) */
+select count(*) from movie_companies,movie_keyword,movie_info_idx,title where title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id>1 and movie_keyword.keyword_id<7281 and movie_info_idx.info_type_id>99 and title.imdb_index=2 and title.production_year>125 and title.phonetic_code>1454;
+
+/*+ HashJoin(title movie_companies movie_keyword cast_info movie_info)
+ HashJoin(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_companies,movie_keyword,cast_info,movie_info,title where title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and movie_companies.company_type_id>1 and movie_keyword.keyword_id<23040 and cast_info.nr_order>1 and title.production_year<103 and title.phonetic_code<12243 and title.season_nr=0;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_info)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) movie_info_idx) movie_info)) */
+select count(*) from movie_companies,movie_info_idx,movie_info,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and movie_companies.company_type_id>1 and movie_info.info_type_id>3 and title.phonetic_code<11852 and title.series_years>0 and title.kind_id<7 and title.imdb_index>0;
+
+/*+ MergeJoin(title movie_info_idx cast_info movie_keyword movie_info)
+ NestLoop(title movie_info_idx cast_info movie_keyword)
+ HashJoin(title movie_info_idx cast_info)
+ NestLoop(title movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ SeqScan(cast_info)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) cast_info) movie_keyword) movie_info)) */
+select count(*) from cast_info,movie_info_idx,movie_info,movie_keyword,title where title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and cast_info.role_id<10 and movie_info.info_type_id>1 and movie_keyword.keyword_id>110 and title.kind_id>3 and title.production_year<125 and title.episode_nr>0;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_companies,movie_info,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_companies.company_type_id>1 and movie_info.info_type_id>3 and cast_info.role_id=1 and title.season_nr>0 and title.production_year<86 and title.episode_nr>0;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_info,cast_info,movie_companies,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and movie_info_idx.info_type_id<101 and movie_info.info_type_id<18 and cast_info.role_id=8 and movie_companies.company_type_id=1 and title.kind_id=7 and title.episode_nr>7;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ HashJoin(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,movie_info,cast_info,movie_companies,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id<26443 and movie_info.info_type_id>2 and cast_info.role_id>1 and title.episode_nr>0 and title.phonetic_code>2079 and title.production_year<107;
+
+/*+ NestLoop(title movie_companies movie_info)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ IndexScan(movie_info)
+ Leading(((title movie_companies) movie_info)) */
+select count(*) from movie_companies,movie_info,title where title.id=movie_companies.movie_id and title.id=movie_info.movie_id and movie_companies.company_type_id>1 and movie_info.info_type_id>3 and title.production_year<125 and title.season_nr>0 and title.episode_nr>0 and title.phonetic_code<916;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading((((title movie_companies) movie_keyword) cast_info)) */
+select count(*) from cast_info,movie_companies,movie_keyword,title where title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and cast_info.nr_order<17 and movie_companies.company_type_id<2 and title.kind_id=4 and title.episode_nr<105 and title.phonetic_code<20505 and title.production_year<126;
+
+/*+ NestLoop(title movie_info_idx cast_info movie_info)
+ NestLoop(title movie_info_idx cast_info)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_info_idx) cast_info) movie_info)) */
+select count(*) from cast_info,movie_info,movie_info_idx,title where title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and cast_info.role_id=1 and movie_info_idx.info_type_id<101 and title.phonetic_code<14097 and title.season_nr=0 and title.production_year>88 and title.kind_id>1;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from movie_companies,movie_keyword,movie_info_idx,cast_info,title where title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and movie_companies.company_type_id<2 and movie_info_idx.info_type_id<101 and title.season_nr=0 and title.production_year>107 and title.imdb_index>0 and title.series_years<1174;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info,movie_keyword,cast_info,movie_companies,title where title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id<16109 and movie_companies.company_type_id>1 and title.season_nr=0 and title.production_year<114 and title.kind_id>2 and title.imdb_index>0;
+
+/*+ MergeJoin(cast_info title movie_companies movie_keyword)
+ NestLoop(title movie_companies movie_keyword)
+ MergeJoin(title movie_companies)
+ SeqScan(cast_info)
+ IndexScan(title)
+ SeqScan(movie_companies)
+ IndexScan(movie_keyword)
+ Leading((cast_info ((title movie_companies) movie_keyword))) */
+select count(*) from cast_info,movie_keyword,movie_companies,title where title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and cast_info.nr_order<31 and movie_keyword.keyword_id<34960 and title.phonetic_code>0 and title.imdb_index=0 and title.production_year>77 and title.season_nr>0;
+
+/*+ NestLoop(title movie_info_idx cast_info movie_info)
+ NestLoop(title movie_info_idx cast_info)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_info_idx) cast_info) movie_info)) */
+select count(*) from cast_info,movie_info,movie_info_idx,title where title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and cast_info.nr_order>3 and movie_info.info_type_id>16 and title.production_year>70 and title.season_nr=0 and title.kind_id=7 and title.episode_nr<20;
+
+/*+ HashJoin(movie_info movie_info_idx movie_keyword title movie_companies)
+ HashJoin(movie_info_idx movie_keyword title movie_companies)
+ MergeJoin(movie_keyword title movie_companies)
+ HashJoin(title movie_companies)
+ SeqScan(movie_info)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ Leading((movie_info (movie_info_idx (movie_keyword (title movie_companies))))) */
+select count(*) from movie_info_idx,movie_info,movie_companies,movie_keyword,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and movie_info_idx.info_type_id>99 and movie_info.info_type_id>1 and title.phonetic_code>11464 and title.production_year>82 and title.episode_nr>0 and title.imdb_index=0;
+
+/*+ NestLoop(title movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ NestLoop(title movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading((((title movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_keyword,movie_info_idx,movie_info,title where title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id<75662 and movie_info.info_type_id>3 and title.phonetic_code>1478 and title.kind_id>1 and title.production_year>80 and title.series_years>0;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_companies,movie_info_idx,movie_info,cast_info,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_info_idx.info_type_id>99 and cast_info.nr_order>0 and title.episode_nr<17 and title.kind_id=7 and title.season_nr=1 and title.production_year>117;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from cast_info,movie_info_idx,movie_info,movie_companies,title where title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and cast_info.nr_order<21 and movie_info.info_type_id>2 and movie_companies.company_type_id=1 and title.kind_id>1 and title.phonetic_code<6721 and title.series_years>0;
+
+/*+ NestLoop(title movie_info_idx movie_companies cast_info)
+ NestLoop(title movie_info_idx movie_companies)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_companies)
+ IndexScan(cast_info)
+ Leading((((title movie_info_idx) movie_companies) cast_info)) */
+select count(*) from cast_info,movie_companies,movie_info_idx,title where title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and cast_info.nr_order>3 and movie_companies.company_type_id=2 and movie_info_idx.info_type_id<101 and title.kind_id>1 and title.episode_nr>0 and title.production_year>121;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ Leading((((title movie_companies) movie_info_idx) movie_keyword)) */
+select count(*) from movie_keyword,movie_companies,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and movie_keyword.keyword_id<72999 and movie_companies.company_type_id>1 and title.imdb_index=0 and title.episode_nr<10 and title.season_nr<1 and title.production_year>92;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ HashJoin(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_info_idx,movie_companies,movie_info,movie_keyword,title where title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and movie_info_idx.info_type_id=100 and movie_companies.company_type_id<2 and title.production_year<127 and title.season_nr=0 and title.series_years<652 and title.kind_id=1;
+
+/*+ NestLoop(title movie_keyword cast_info movie_info)
+ NestLoop(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info,movie_keyword,cast_info,title where title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and movie_info.info_type_id>2 and cast_info.role_id<4 and title.series_years>0 and title.imdb_index>0 and title.season_nr=0 and title.kind_id>1;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ Leading((((title movie_companies) movie_info_idx) movie_keyword)) */
+select count(*) from movie_keyword,movie_companies,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id=2 and movie_info_idx.info_type_id=101 and title.imdb_index=0 and title.production_year<116 and title.phonetic_code>3191 and title.season_nr<1;
+
+/*+ MergeJoin(title movie_companies movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from movie_info_idx,movie_companies,movie_keyword,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and movie_info_idx.info_type_id>99 and movie_companies.company_type_id<2 and movie_keyword.keyword_id<26870 and cast_info.nr_order>0 and title.kind_id>1 and title.episode_nr>0;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from cast_info,movie_companies,movie_keyword,movie_info,title where title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and cast_info.role_id=1 and movie_info.info_type_id<98 and title.series_years>0 and title.season_nr>0 and title.production_year<120 and title.kind_id>1;
+
+/*+ NestLoop(title movie_keyword movie_info_idx cast_info movie_info)
+ NestLoop(title movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_keyword movie_info_idx)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_keyword) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_keyword,cast_info,movie_info,title where title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id>335 and cast_info.role_id=1 and movie_info.info_type_id>5 and title.kind_id>1 and title.production_year<78 and title.season_nr=0;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from movie_keyword,cast_info,movie_companies,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and movie_keyword.keyword_id<91452 and cast_info.role_id<10 and title.phonetic_code<17310 and title.season_nr<6 and title.episode_nr<38 and title.series_years>0;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ HashJoin(title movie_companies movie_keyword cast_info)
+ HashJoin(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,cast_info,movie_companies,movie_info,title where title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id<43360 and cast_info.nr_order<8 and movie_companies.company_type_id<2 and title.season_nr>0 and title.kind_id>4 and title.production_year>110;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from cast_info,movie_companies,movie_keyword,movie_info,title where title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and movie_companies.company_type_id=2 and movie_info.info_type_id>1 and title.production_year<40 and title.series_years>0 and title.imdb_index=0 and title.phonetic_code>5929;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info_idx movie_info)
+ HashJoin(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) movie_info)) */
+select count(*) from movie_companies,movie_info_idx,movie_keyword,movie_info,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and movie_companies.company_type_id>1 and movie_info_idx.info_type_id<101 and title.kind_id>1 and title.season_nr<5 and title.episode_nr<2 and title.imdb_index>0;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) movie_keyword) movie_info)) */
+select count(*) from movie_keyword,movie_companies,movie_info,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id<128486 and movie_companies.company_type_id>1 and movie_info.info_type_id>1 and title.kind_id=4 and title.phonetic_code>1196 and title.imdb_index>0;
+
+/*+ MergeJoin(movie_companies title movie_info_idx movie_info movie_keyword)
+ MergeJoin(movie_companies title movie_info_idx movie_info)
+ MergeJoin(movie_companies title movie_info_idx)
+ MergeJoin(movie_companies title)
+ SeqScan(movie_companies)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_info)
+ SeqScan(movie_keyword)
+ Leading(((((movie_companies title) movie_info_idx) movie_info) movie_keyword)) */
+select count(*) from movie_info_idx,movie_info,movie_companies,movie_keyword,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and movie_info_idx.info_type_id=101 and movie_companies.company_type_id<2 and title.production_year<127 and title.phonetic_code>298 and title.episode_nr<12 and title.season_nr<15;
+
+/*+ NestLoop(title movie_keyword movie_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((title movie_keyword) movie_info)) */
+select count(*) from movie_info,movie_keyword,title where title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and movie_info.info_type_id>4 and movie_keyword.keyword_id<10237 and title.episode_nr>0 and title.phonetic_code<17215 and title.kind_id>1 and title.series_years>0;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from movie_companies,movie_info_idx,movie_keyword,cast_info,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and movie_companies.company_type_id=1 and movie_info_idx.info_type_id>99 and title.series_years>0 and title.episode_nr<1364 and title.production_year>38 and title.imdb_index=0;
+
+/*+ NestLoop(title movie_keyword movie_companies cast_info)
+ NestLoop(title movie_keyword movie_companies)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(movie_companies)
+ IndexScan(cast_info)
+ Leading((((title movie_keyword) movie_companies) cast_info)) */
+select count(*) from movie_companies,movie_keyword,cast_info,title where title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and movie_companies.company_type_id=1 and movie_keyword.keyword_id>580 and cast_info.role_id=10 and title.kind_id=7 and title.season_nr=2 and title.episode_nr>17;
+
+/*+ NestLoop(title cast_info movie_info)
+ NestLoop(title cast_info)
+ SeqScan(title)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((title cast_info) movie_info)) */
+select count(*) from movie_info,cast_info,title where title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_info.info_type_id<98 and cast_info.role_id>1 and title.production_year>106 and title.kind_id=7 and title.imdb_index=0 and title.series_years>0;
+
+/*+ NestLoop(title movie_info_idx cast_info movie_keyword movie_info)
+ NestLoop(title movie_info_idx cast_info movie_keyword)
+ NestLoop(title movie_info_idx cast_info)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) cast_info) movie_keyword) movie_info)) */
+select count(*) from movie_info,movie_keyword,movie_info_idx,cast_info,title where title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and movie_info.info_type_id>2 and cast_info.role_id=3 and title.kind_id<7 and title.production_year<112 and title.series_years>0 and title.phonetic_code>20552;
+
+/*+ NestLoop(title movie_info_idx cast_info movie_keyword)
+ NestLoop(title movie_info_idx cast_info)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_keyword)
+ Leading((((title movie_info_idx) cast_info) movie_keyword)) */
+select count(*) from movie_keyword,movie_info_idx,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id<39502 and cast_info.nr_order>2 and title.production_year>85 and title.kind_id>1 and title.phonetic_code<6496 and title.imdb_index>0;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ HashJoin(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,movie_info,movie_companies,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id<45921 and movie_info.info_type_id>2 and cast_info.role_id>2 and title.imdb_index=0 and title.production_year<120 and title.season_nr>0;
+
+/*+ HashJoin(title movie_companies movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from movie_companies,movie_info_idx,movie_keyword,cast_info,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and movie_info_idx.info_type_id>99 and movie_keyword.keyword_id<38890 and cast_info.nr_order<62 and title.production_year>110 and title.phonetic_code>5508 and title.kind_id>3;
+
+/*+ NestLoop(title movie_keyword movie_info_idx cast_info movie_info)
+ NestLoop(title movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_keyword movie_info_idx)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_keyword) movie_info_idx) cast_info) movie_info)) */
+select count(*) from cast_info,movie_info,movie_info_idx,movie_keyword,title where title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and movie_info.info_type_id>1 and movie_info_idx.info_type_id=100 and title.imdb_index=0 and title.series_years>0 and title.phonetic_code<17078 and title.production_year<117;
+
+/*+ HashJoin(title movie_companies cast_info movie_keyword movie_info)
+ NestLoop(title movie_companies cast_info movie_keyword)
+ HashJoin(title movie_companies cast_info)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ SeqScan(cast_info)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) cast_info) movie_keyword) movie_info)) */
+select count(*) from movie_keyword,movie_companies,cast_info,movie_info,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id>348 and movie_companies.company_type_id>1 and cast_info.nr_order<46 and title.imdb_index=0 and title.season_nr=0 and title.kind_id>1;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_info)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) movie_info_idx) movie_info)) */
+select count(*) from movie_companies,movie_info,movie_info_idx,title where title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id=2 and movie_info.info_type_id<105 and title.phonetic_code>0 and title.series_years>0 and title.season_nr<50 and title.production_year>106;
+
+/*+ HashJoin(title movie_companies movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from cast_info,movie_info_idx,movie_companies,movie_keyword,title where title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and cast_info.nr_order>0 and movie_companies.company_type_id<2 and title.phonetic_code>0 and title.production_year<123 and title.kind_id=7 and title.episode_nr<15;
+
+/*+ MergeJoin(title movie_companies movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_companies,movie_info_idx,movie_info,movie_keyword,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and movie_companies.company_type_id>1 and movie_info.info_type_id<107 and title.kind_id>1 and title.season_nr>0 and title.episode_nr<9302 and title.series_years<627;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info_idx movie_info)
+ HashJoin(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) movie_info)) */
+select count(*) from movie_keyword,movie_info_idx,movie_companies,movie_info,title where title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id>181 and movie_info_idx.info_type_id<101 and movie_companies.company_type_id<2 and title.phonetic_code<17708 and title.series_years>0 and title.imdb_index>0;
+
+/*+ NestLoop(title movie_companies movie_info)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info)
+ Leading(((title movie_companies) movie_info)) */
+select count(*) from movie_companies,movie_info,title where title.id=movie_companies.movie_id and title.id=movie_info.movie_id and movie_companies.company_type_id>1 and movie_info.info_type_id<103 and title.production_year<73 and title.imdb_index=0 and title.season_nr=2 and title.episode_nr>16;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) movie_keyword) movie_info)) */
+select count(*) from movie_keyword,movie_info,movie_companies,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id<27150 and movie_info.info_type_id>2 and title.kind_id<4 and title.season_nr=0 and title.imdb_index=0 and title.phonetic_code>14447;
+
+/*+ HashJoin(movie_keyword title movie_companies movie_info)
+ MergeJoin(movie_keyword title movie_companies)
+ HashJoin(title movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info)
+ Leading(((movie_keyword (title movie_companies)) movie_info)) */
+select count(*) from movie_keyword,movie_companies,movie_info,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id>941 and movie_companies.company_type_id=1 and movie_info.info_type_id>5 and title.phonetic_code<2681 and title.kind_id=1 and title.imdb_index=0;
+
+/*+ MergeJoin(cast_info title movie_info_idx movie_keyword)
+ NestLoop(title movie_info_idx movie_keyword)
+ MergeJoin(title movie_info_idx)
+ SeqScan(cast_info)
+ IndexScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ Leading((cast_info ((title movie_info_idx) movie_keyword))) */
+select count(*) from movie_info_idx,cast_info,movie_keyword,title where title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and movie_info_idx.info_type_id=99 and cast_info.nr_order>0 and title.phonetic_code<18595 and title.production_year>80 and title.season_nr=0 and title.episode_nr<32;
+
+/*+ MergeJoin(movie_info cast_info movie_info_idx title movie_companies)
+ MergeJoin(cast_info movie_info_idx title movie_companies)
+ MergeJoin(movie_info_idx title movie_companies)
+ NestLoop(title movie_companies)
+ IndexScan(movie_info)
+ SeqScan(cast_info)
+ IndexScan(movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ Leading((movie_info (cast_info (movie_info_idx (title movie_companies))))) */
+select count(*) from movie_companies,movie_info_idx,movie_info,cast_info,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_companies.company_type_id<2 and movie_info.info_type_id<16 and title.episode_nr<6 and title.season_nr<2 and title.production_year<125 and title.phonetic_code>16805;
+
+/*+ NestLoop(title movie_companies cast_info movie_info)
+ NestLoop(title movie_companies cast_info)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) cast_info) movie_info)) */
+select count(*) from cast_info,movie_companies,movie_info,title where title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and cast_info.nr_order<41 and movie_info.info_type_id>16 and title.production_year>122 and title.phonetic_code>16353 and title.kind_id=7 and title.season_nr=4;
+
+/*+ NestLoop(title movie_keyword movie_info_idx cast_info movie_info)
+ NestLoop(title movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_keyword movie_info_idx)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_keyword) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_keyword,cast_info,movie_info_idx,movie_info,title where title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and movie_info_idx.info_type_id<101 and movie_info.info_type_id>2 and title.production_year>111 and title.imdb_index>0 and title.kind_id>1 and title.phonetic_code>2267;
+
+/*+ NestLoop(title movie_keyword movie_companies cast_info movie_info)
+ NestLoop(title movie_keyword movie_companies cast_info)
+ HashJoin(title movie_keyword movie_companies)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(movie_companies)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_keyword) movie_companies) cast_info) movie_info)) */
+select count(*) from movie_companies,cast_info,movie_keyword,movie_info,title where title.id=movie_companies.movie_id and title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and movie_companies.company_type_id>1 and cast_info.role_id=3 and title.episode_nr<33 and title.series_years>0 and title.kind_id<7 and title.phonetic_code>20654;
+
+/*+ HashJoin(title movie_keyword cast_info movie_info)
+ HashJoin(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) cast_info) movie_info)) */
+select count(*) from cast_info,movie_info,movie_keyword,title where title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and cast_info.role_id<10 and movie_info.info_type_id>2 and title.imdb_index=0 and title.production_year<127 and title.phonetic_code<22991 and title.episode_nr>0;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from cast_info,movie_keyword,movie_info_idx,movie_info,title where title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and cast_info.role_id>1 and movie_info_idx.info_type_id=101 and title.series_years>0 and title.phonetic_code>19425 and title.season_nr=0 and title.imdb_index>0;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_info)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) movie_info_idx) movie_info)) */
+select count(*) from movie_info_idx,movie_info,movie_companies,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and movie_info_idx.info_type_id<101 and movie_info.info_type_id>16 and title.imdb_index=0 and title.phonetic_code<17467 and title.series_years>0 and title.season_nr=0;
+
+/*+ HashJoin(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ Leading((((title movie_companies) movie_keyword) cast_info)) */
+select count(*) from movie_keyword,movie_companies,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id>335 and movie_companies.company_type_id<2 and cast_info.role_id>1 and title.phonetic_code>3125 and title.episode_nr>0 and title.kind_id>1;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_companies,movie_keyword,movie_info,movie_info_idx,title where title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id<2 and movie_info_idx.info_type_id=99 and title.production_year>84 and title.phonetic_code>2106 and title.imdb_index=0 and title.season_nr>0;
+
+/*+ NestLoop(title movie_keyword movie_info_idx cast_info movie_info)
+ NestLoop(title movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_keyword movie_info_idx)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_keyword) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_info,cast_info,movie_keyword,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and movie_info_idx.info_type_id<101 and movie_info.info_type_id<18 and title.imdb_index=0 and title.phonetic_code>6737 and title.production_year>126 and title.series_years>0;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading((((title movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from cast_info,movie_keyword,movie_info_idx,title where title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and cast_info.role_id>1 and movie_keyword.keyword_id>3 and movie_info_idx.info_type_id>99 and title.series_years<1403 and title.kind_id>2 and title.phonetic_code<2182;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) cast_info)) */
+select count(*) from movie_keyword,movie_info_idx,cast_info,movie_companies,title where title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and movie_info_idx.info_type_id>99 and cast_info.nr_order<19 and title.episode_nr<5 and title.production_year>124 and title.phonetic_code<7359 and title.season_nr>6;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading((((title movie_companies) movie_info_idx) cast_info)) */
+select count(*) from movie_info_idx,cast_info,movie_companies,title where title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and cast_info.role_id=1 and movie_companies.company_type_id<2 and title.kind_id<7 and title.imdb_index>0 and title.production_year>80 and title.episode_nr<26;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info_idx movie_info)
+ HashJoin(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) movie_info)) */
+select count(*) from movie_info_idx,movie_keyword,movie_companies,movie_info,title where title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and movie_info_idx.info_type_id>99 and movie_companies.company_type_id<2 and title.kind_id=7 and title.phonetic_code<2554 and title.production_year<125 and title.season_nr<1;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_info_idx,movie_info,movie_keyword,movie_companies,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and movie_info.info_type_id<107 and movie_keyword.keyword_id>3337 and title.season_nr<2 and title.series_years>0 and title.phonetic_code<16303 and title.production_year<119;
+
+/*+ NestLoop(title movie_companies cast_info movie_info)
+ NestLoop(title movie_companies cast_info)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) cast_info) movie_info)) */
+select count(*) from movie_info,cast_info,movie_companies,title where title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and movie_info.info_type_id>1 and movie_companies.company_type_id=1 and title.season_nr<7 and title.series_years>0 and title.production_year>112 and title.phonetic_code>5562;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_companies,cast_info,movie_info_idx,movie_info,title where title.id=movie_companies.movie_id and title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and movie_companies.company_type_id>1 and cast_info.nr_order<45 and movie_info_idx.info_type_id>99 and movie_info.info_type_id<98 and title.imdb_index=0 and title.production_year<94;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading((((title movie_companies) movie_info_idx) cast_info)) */
+select count(*) from cast_info,movie_info_idx,movie_companies,title where title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and movie_info_idx.info_type_id<101 and movie_companies.company_type_id=1 and title.season_nr>2 and title.phonetic_code<14087 and title.production_year>114 and title.episode_nr<11;
+
+/*+ NestLoop(title movie_companies cast_info movie_keyword movie_info)
+ NestLoop(title movie_companies cast_info movie_keyword)
+ HashJoin(title movie_companies cast_info)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(cast_info)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) cast_info) movie_keyword) movie_info)) */
+select count(*) from movie_keyword,movie_info,cast_info,movie_companies,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and movie_info.info_type_id<106 and cast_info.nr_order<1 and movie_companies.company_type_id=1 and title.phonetic_code<5563 and title.production_year>102 and title.kind_id<3;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from cast_info,movie_keyword,movie_companies,movie_info_idx,title where title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and cast_info.role_id=8 and movie_info_idx.info_type_id<101 and title.phonetic_code<2401 and title.season_nr<2 and title.kind_id=7 and title.production_year<127;
+
+/*+ NestLoop(title movie_keyword cast_info movie_info)
+ NestLoop(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,movie_info,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id<63591 and movie_info.info_type_id<16 and cast_info.role_id<5 and title.series_years>1336 and title.production_year>117 and title.phonetic_code>10213;
+
+/*+ MergeJoin(movie_companies title movie_info_idx movie_info movie_keyword)
+ MergeJoin(movie_companies title movie_info_idx movie_info)
+ MergeJoin(movie_companies title movie_info_idx)
+ MergeJoin(movie_companies title)
+ SeqScan(movie_companies)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_info)
+ SeqScan(movie_keyword)
+ Leading(((((movie_companies title) movie_info_idx) movie_info) movie_keyword)) */
+select count(*) from movie_keyword,movie_companies,movie_info,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_keyword.keyword_id>62 and movie_info_idx.info_type_id>99 and title.phonetic_code<20710 and title.kind_id=1 and title.season_nr=0 and title.imdb_index=0;
+
+/*+ NestLoop(title movie_keyword movie_info_idx cast_info movie_info)
+ NestLoop(title movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_keyword movie_info_idx)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_keyword) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_keyword,movie_info_idx,movie_info,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id>924 and movie_info.info_type_id<94 and title.kind_id>1 and title.phonetic_code>1927 and title.season_nr=0 and title.production_year<64;
+
+/*+ NestLoop(title movie_keyword movie_info_idx movie_info)
+ NestLoop(title movie_keyword movie_info_idx)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) movie_info_idx) movie_info)) */
+select count(*) from movie_info,movie_info_idx,movie_keyword,title where title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and movie_info.info_type_id>2 and movie_info_idx.info_type_id>99 and title.phonetic_code<22504 and title.imdb_index>0 and title.season_nr<4 and title.kind_id<7;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_keyword,cast_info,movie_info,title where title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id>178 and movie_info.info_type_id<8 and title.imdb_index>0 and title.series_years>0 and title.production_year<125 and title.phonetic_code<22158;
+
+/*+ MergeJoin(movie_companies title movie_info_idx movie_info movie_keyword)
+ MergeJoin(movie_companies title movie_info_idx movie_info)
+ MergeJoin(movie_companies title movie_info_idx)
+ MergeJoin(movie_companies title)
+ SeqScan(movie_companies)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_info)
+ IndexScan(movie_keyword)
+ Leading(((((movie_companies title) movie_info_idx) movie_info) movie_keyword)) */
+select count(*) from movie_keyword,movie_companies,movie_info,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id=2 and movie_info.info_type_id>1 and title.season_nr<1 and title.kind_id=1 and title.production_year<127 and title.phonetic_code>0;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading((((title movie_companies) movie_keyword) cast_info)) */
+select count(*) from cast_info,movie_keyword,movie_companies,title where title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and cast_info.nr_order>1 and movie_companies.company_type_id<2 and title.phonetic_code>4763 and title.season_nr=0 and title.production_year<118 and title.kind_id>4;
+
+/*+ MergeJoin(cast_info title movie_companies movie_keyword)
+ NestLoop(title movie_companies movie_keyword)
+ MergeJoin(title movie_companies)
+ SeqScan(cast_info)
+ IndexScan(title)
+ SeqScan(movie_companies)
+ IndexScan(movie_keyword)
+ Leading((cast_info ((title movie_companies) movie_keyword))) */
+select count(*) from movie_companies,cast_info,movie_keyword,title where title.id=movie_companies.movie_id and title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and movie_companies.company_type_id<2 and cast_info.nr_order>1 and title.production_year<120 and title.season_nr<2 and title.kind_id<7 and title.phonetic_code<8124;
+
+/*+ HashJoin(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ Leading(((title movie_keyword) cast_info)) */
+select count(*) from movie_keyword,cast_info,title where title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id>117 and cast_info.role_id<10 and title.production_year<113 and title.phonetic_code>9807 and title.imdb_index=0 and title.episode_nr<26;
+
+/*+ NestLoop(title movie_info_idx cast_info movie_info)
+ NestLoop(title movie_info_idx cast_info)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_info,cast_info,movie_info_idx,title where title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and cast_info.role_id>1 and movie_info_idx.info_type_id=101 and title.episode_nr>0 and title.phonetic_code<16638 and title.kind_id>3 and title.production_year>124;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) movie_keyword) movie_info)) */
+select count(*) from movie_keyword,movie_info,movie_companies,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id<26488 and movie_info.info_type_id>1 and title.season_nr>0 and title.kind_id>3 and title.imdb_index=0 and title.phonetic_code<20401;
+
+/*+ NestLoop(title movie_keyword cast_info movie_info)
+ NestLoop(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) cast_info) movie_info)) */
+select count(*) from cast_info,movie_info,movie_keyword,title where title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and movie_info.info_type_id>1 and movie_keyword.keyword_id>373 and title.series_years>0 and title.phonetic_code<7359 and title.production_year<120 and title.episode_nr>0;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_info,cast_info,movie_companies,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and movie_info_idx.info_type_id>99 and cast_info.nr_order<51 and movie_companies.company_type_id>1 and title.series_years>0 and title.phonetic_code<5290 and title.kind_id>1;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info,cast_info,movie_companies,movie_keyword,title where title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and movie_companies.company_type_id<2 and movie_keyword.keyword_id>434 and title.phonetic_code<6031 and title.season_nr>1 and title.kind_id=7 and title.production_year<95;
+
+/*+ NestLoop(title movie_keyword movie_info_idx cast_info movie_info)
+ NestLoop(title movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_keyword movie_info_idx)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_keyword) movie_info_idx) cast_info) movie_info)) */
+select count(*) from cast_info,movie_info_idx,movie_info,movie_keyword,title where title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and cast_info.nr_order>2 and movie_info.info_type_id>2 and movie_keyword.keyword_id<7641 and title.season_nr>0 and title.kind_id>3 and title.phonetic_code<5563;
+
+/*+ MergeJoin(movie_companies title movie_keyword movie_info cast_info)
+ MergeJoin(movie_companies title movie_keyword movie_info)
+ MergeJoin(movie_companies title movie_keyword)
+ MergeJoin(movie_companies title)
+ SeqScan(movie_companies)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info)
+ IndexScan(cast_info)
+ Leading(((((movie_companies title) movie_keyword) movie_info) cast_info)) */
+select count(*) from movie_info,movie_keyword,movie_companies,cast_info,title where title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_info.info_type_id<47 and movie_companies.company_type_id>1 and cast_info.role_id=10 and title.imdb_index=0 and title.phonetic_code<8349 and title.production_year>117;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info,movie_keyword,movie_companies,cast_info,title where title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_info.info_type_id<105 and movie_keyword.keyword_id>117 and title.kind_id=7 and title.episode_nr>0 and title.imdb_index=0 and title.series_years>0;
+
+/*+ NestLoop(title movie_keyword cast_info movie_info)
+ NestLoop(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) cast_info) movie_info)) */
+select count(*) from cast_info,movie_keyword,movie_info,title where title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id<54979 and movie_info.info_type_id<8 and title.episode_nr>0 and title.season_nr>0 and title.phonetic_code<19011 and title.series_years>0;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading((((title movie_companies) movie_keyword) cast_info)) */
+select count(*) from cast_info,movie_companies,movie_keyword,title where title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and cast_info.role_id>1 and movie_companies.company_type_id>1 and title.kind_id<7 and title.production_year>98 and title.series_years>0 and title.episode_nr<58;
+
+/*+ NestLoop(title movie_companies movie_info)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info)
+ Leading(((title movie_companies) movie_info)) */
+select count(*) from movie_info,movie_companies,title where title.id=movie_info.movie_id and title.id=movie_companies.movie_id and movie_info.info_type_id<17 and movie_companies.company_type_id<2 and title.imdb_index>0 and title.series_years>0 and title.phonetic_code<3015 and title.production_year<118;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from cast_info,movie_info_idx,movie_keyword,movie_info,title where title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and cast_info.role_id=2 and movie_info.info_type_id<17 and title.imdb_index=0 and title.production_year<116 and title.kind_id>4 and title.phonetic_code>19023;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_info,movie_keyword,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and movie_info_idx.info_type_id=101 and movie_info.info_type_id<16 and movie_keyword.keyword_id<2988 and cast_info.role_id>1 and title.production_year<93 and title.series_years>0;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from cast_info,movie_keyword,movie_info,movie_companies,title where title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id>137 and movie_info.info_type_id<94 and title.series_years>0 and title.episode_nr>0 and title.imdb_index=0 and title.kind_id>4;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) cast_info)) */
+select count(*) from movie_info_idx,movie_companies,movie_keyword,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and movie_info_idx.info_type_id<101 and movie_keyword.keyword_id<74422 and title.season_nr=0 and title.production_year>97 and title.phonetic_code<16717 and title.imdb_index>0;
+
+/*+ MergeJoin(movie_companies title movie_info_idx movie_info movie_keyword)
+ MergeJoin(movie_companies title movie_info_idx movie_info)
+ MergeJoin(movie_companies title movie_info_idx)
+ MergeJoin(movie_companies title)
+ SeqScan(movie_companies)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_info)
+ SeqScan(movie_keyword)
+ Leading(((((movie_companies title) movie_info_idx) movie_info) movie_keyword)) */
+select count(*) from movie_keyword,movie_info,movie_info_idx,movie_companies,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id>1 and movie_info.info_type_id>7 and movie_companies.company_type_id>1 and title.phonetic_code<10247 and title.production_year>111 and title.imdb_index=0;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ NestLoop(title movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading((((title movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from movie_keyword,movie_info_idx,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id<113958 and movie_info_idx.info_type_id>99 and cast_info.role_id=4 and title.production_year>126 and title.phonetic_code<18261 and title.episode_nr>0;
+
+/*+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ Leading(((title movie_companies) movie_info_idx)) */
+select count(*) from movie_companies,movie_info_idx,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id=2 and movie_info_idx.info_type_id>99 and title.episode_nr>1 and title.imdb_index=0 and title.phonetic_code>12423 and title.production_year<91;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from cast_info,movie_companies,movie_info_idx,movie_keyword,title where title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and cast_info.role_id<9 and movie_companies.company_type_id>1 and title.kind_id<7 and title.phonetic_code>0 and title.series_years>0 and title.episode_nr<144;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info_idx,cast_info,movie_info,movie_keyword,title where title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and movie_info_idx.info_type_id=100 and cast_info.nr_order>1 and movie_info.info_type_id<103 and movie_keyword.keyword_id>18623 and title.production_year>126 and title.imdb_index=0;
+
+/*+ NestLoop(title movie_info_idx movie_companies cast_info)
+ NestLoop(title movie_info_idx movie_companies)
+ NestLoop(title movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_companies)
+ IndexScan(cast_info)
+ Leading((((title movie_info_idx) movie_companies) cast_info)) */
+select count(*) from movie_companies,movie_info_idx,cast_info,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and movie_companies.company_type_id=2 and cast_info.nr_order>1 and title.season_nr<14 and title.kind_id<7 and title.episode_nr<3 and title.series_years>0;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_info)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) movie_info_idx) movie_info)) */
+select count(*) from movie_info,movie_info_idx,movie_companies,title where title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and movie_info.info_type_id<106 and movie_companies.company_type_id<2 and title.phonetic_code>10150 and title.kind_id<7 and title.season_nr<2 and title.production_year<104;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,cast_info,movie_companies,movie_info,title where title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id<10821 and movie_companies.company_type_id<2 and movie_info.info_type_id<18 and title.production_year<122 and title.imdb_index>0 and title.kind_id>1;
+
+/*+ NestLoop(title movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ NestLoop(title movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading((((title movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_info,movie_keyword,movie_info_idx,title where title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and movie_info.info_type_id>2 and movie_keyword.keyword_id<46064 and title.season_nr=0 and title.imdb_index>0 and title.kind_id>1 and title.phonetic_code>7487;
+
+/*+ NestLoop(title movie_companies cast_info movie_info)
+ NestLoop(title movie_companies cast_info)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) cast_info) movie_info)) */
+select count(*) from cast_info,movie_info,movie_companies,title where title.id=cast_info.movie_id and title.id=movie_info.movie_id and title.id=movie_companies.movie_id and cast_info.role_id>1 and movie_companies.company_type_id<2 and title.episode_nr<1 and title.kind_id<7 and title.production_year<90 and title.phonetic_code<14715;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_companies,movie_info,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_companies.company_type_id=2 and movie_info.info_type_id>2 and cast_info.role_id=1 and title.kind_id>4 and title.episode_nr>0 and title.production_year>114;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ HashJoin(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ NestLoop(title movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ SeqScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,movie_info,cast_info,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and movie_keyword.keyword_id>347 and cast_info.role_id=1 and movie_info_idx.info_type_id<101 and title.kind_id>1 and title.season_nr>0 and title.episode_nr>0;
+
+/*+ NestLoop(title movie_keyword cast_info movie_info)
+ NestLoop(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info,cast_info,movie_keyword,title where title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and movie_info.info_type_id>4 and cast_info.role_id=3 and title.series_years>0 and title.kind_id>1 and title.episode_nr<95 and title.production_year>86;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_companies,movie_info,movie_info_idx,movie_keyword,title where title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and movie_info.info_type_id<104 and movie_keyword.keyword_id>240 and title.series_years>0 and title.kind_id>1 and title.phonetic_code<1318 and title.season_nr=0;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info_idx movie_info)
+ HashJoin(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) movie_info)) */
+select count(*) from movie_keyword,movie_companies,movie_info,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_keyword.keyword_id<78368 and movie_companies.company_type_id>1 and movie_info_idx.info_type_id=99 and title.episode_nr<11 and title.season_nr>15 and title.phonetic_code<11926;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_keyword,movie_companies,movie_info,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_keyword.keyword_id>643 and movie_companies.company_type_id=1 and movie_info.info_type_id<98 and title.series_years>0 and title.production_year<74 and title.phonetic_code<11352;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ MergeJoin(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_companies,movie_keyword,movie_info,movie_info_idx,title where title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id=2 and movie_info.info_type_id>1 and movie_info_idx.info_type_id<101 and title.season_nr>0 and title.production_year>120 and title.series_years<1366;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword movie_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) movie_info)) */
+select count(*) from movie_info_idx,movie_keyword,movie_companies,movie_info,title where title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=movie_info.movie_id and movie_info_idx.info_type_id=99 and movie_keyword.keyword_id<2488 and movie_companies.company_type_id>1 and movie_info.info_type_id>2 and title.season_nr=0 and title.kind_id>1;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading((((title movie_companies) movie_info_idx) cast_info)) */
+select count(*) from movie_companies,movie_info_idx,cast_info,title where title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and movie_companies.company_type_id>1 and movie_info_idx.info_type_id>99 and title.phonetic_code<11385 and title.imdb_index=0 and title.kind_id<2 and title.series_years<1296;
+
+/*+ NestLoop(title movie_keyword movie_companies cast_info)
+ NestLoop(title movie_keyword movie_companies)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(movie_companies)
+ IndexScan(cast_info)
+ Leading((((title movie_keyword) movie_companies) cast_info)) */
+select count(*) from movie_keyword,movie_companies,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id<12265 and movie_companies.company_type_id>1 and title.production_year>114 and title.phonetic_code>0 and title.series_years>0 and title.season_nr<3;
+
+/*+ NestLoop(title movie_companies movie_info)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info)
+ Leading(((title movie_companies) movie_info)) */
+select count(*) from movie_info,movie_companies,title where title.id=movie_info.movie_id and title.id=movie_companies.movie_id and movie_info.info_type_id<94 and movie_companies.company_type_id=1 and title.series_years>0 and title.phonetic_code<10381 and title.kind_id>1 and title.episode_nr>0;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_companies,cast_info,movie_info_idx,movie_info,title where title.id=movie_companies.movie_id and title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and movie_companies.company_type_id>1 and movie_info_idx.info_type_id=101 and title.phonetic_code<16905 and title.season_nr=0 and title.series_years>0 and title.production_year<110;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading((((title movie_companies) movie_keyword) cast_info)) */
+select count(*) from movie_keyword,movie_companies,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id<37573 and movie_companies.company_type_id>1 and cast_info.role_id<10 and title.imdb_index=0 and title.season_nr>0 and title.phonetic_code<11266;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading((((title movie_companies) movie_info_idx) cast_info)) */
+select count(*) from movie_info_idx,movie_companies,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_info_idx.info_type_id<101 and movie_companies.company_type_id=1 and cast_info.role_id=7 and title.phonetic_code>15678 and title.season_nr<5 and title.kind_id<7;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ NestLoop(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ Leading(((((title movie_companies) movie_info_idx) movie_keyword) cast_info)) */
+select count(*) from movie_keyword,movie_companies,cast_info,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and movie_companies.company_type_id<2 and cast_info.role_id>1 and title.episode_nr<32 and title.imdb_index>0 and title.kind_id>1 and title.production_year<126;
+
+/*+ NestLoop(title movie_info_idx movie_companies cast_info movie_info)
+ NestLoop(title movie_info_idx movie_companies cast_info)
+ NestLoop(title movie_info_idx movie_companies)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_companies)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_companies) cast_info) movie_info)) */
+select count(*) from movie_info,cast_info,movie_companies,movie_info_idx,title where title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_info_idx.movie_id and movie_info.info_type_id>1 and cast_info.role_id=5 and movie_info_idx.info_type_id=101 and title.imdb_index=0 and title.production_year>120 and title.episode_nr>0;
+
+/*+ NestLoop(title movie_companies movie_info_idx cast_info movie_info)
+ NestLoop(title movie_companies movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_info_idx)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_companies,cast_info,movie_info,title where title.id=movie_info_idx.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and movie_info_idx.info_type_id<101 and movie_companies.company_type_id>1 and cast_info.role_id>1 and title.phonetic_code>822 and title.imdb_index=0 and title.kind_id>1;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info_idx movie_info)
+ NestLoop(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) movie_info)) */
+select count(*) from movie_companies,movie_keyword,movie_info,movie_info_idx,title where title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=movie_info_idx.movie_id and movie_keyword.keyword_id<83549 and movie_info.info_type_id<98 and movie_info_idx.info_type_id=101 and title.series_years>0 and title.phonetic_code>4227 and title.kind_id>1;
+
+/*+ MergeJoin(movie_info_idx title movie_companies movie_keyword movie_info)
+ MergeJoin(movie_info_idx title movie_companies movie_keyword)
+ MergeJoin(movie_info_idx title movie_companies)
+ MergeJoin(movie_info_idx title)
+ IndexScan(movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info)
+ Leading(((((movie_info_idx title) movie_companies) movie_keyword) movie_info)) */
+select count(*) from movie_companies,movie_info,movie_keyword,movie_info_idx,title where title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and movie_info.info_type_id<107 and movie_info_idx.info_type_id<101 and title.kind_id<7 and title.phonetic_code>10311 and title.season_nr<5 and title.production_year>109;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_info,movie_keyword,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and movie_info_idx.info_type_id>99 and movie_keyword.keyword_id>1 and cast_info.role_id=6 and title.production_year<108 and title.kind_id=3 and title.phonetic_code<20849;
+
+/*+ NestLoop(title movie_companies movie_keyword cast_info movie_info)
+ NestLoop(title movie_companies movie_keyword cast_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_companies) movie_keyword) cast_info) movie_info)) */
+select count(*) from cast_info,movie_companies,movie_keyword,movie_info,title where title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and cast_info.nr_order<28 and movie_companies.company_type_id=2 and movie_keyword.keyword_id>359 and movie_info.info_type_id<104 and title.series_years>0 and title.production_year>88;
+
+/*+ NestLoop(title movie_keyword movie_info_idx)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info_idx)
+ Leading(((title movie_keyword) movie_info_idx)) */
+select count(*) from movie_info_idx,movie_keyword,title where title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and movie_info_idx.info_type_id<101 and movie_keyword.keyword_id>51 and title.production_year>88 and title.season_nr=0 and title.series_years>0 and title.imdb_index>0;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) movie_keyword) movie_info)) */
+select count(*) from movie_info,movie_keyword,movie_companies,title where title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and movie_keyword.keyword_id>335 and movie_companies.company_type_id>1 and title.phonetic_code>13531 and title.production_year>106 and title.episode_nr>0 and title.season_nr>0;
+
+/*+ MergeJoin(cast_info movie_info_idx title movie_keyword)
+ NestLoop(movie_info_idx title movie_keyword)
+ MergeJoin(movie_info_idx title)
+ SeqScan(cast_info)
+ IndexScan(movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ Leading((cast_info ((movie_info_idx title) movie_keyword))) */
+select count(*) from movie_keyword,movie_info_idx,cast_info,title where title.id=movie_keyword.movie_id and title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id>813 and movie_info_idx.info_type_id=101 and cast_info.nr_order>3 and title.phonetic_code<9039 and title.production_year>97 and title.kind_id=1;
+
+/*+ NestLoop(title movie_companies cast_info movie_info)
+ NestLoop(title movie_companies cast_info)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_companies) cast_info) movie_info)) */
+select count(*) from movie_companies,movie_info,cast_info,title where title.id=movie_companies.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_companies.company_type_id<2 and movie_info.info_type_id<17 and cast_info.role_id=4 and title.imdb_index=0 and title.series_years>0 and title.production_year<66;
+
+/*+ MergeJoin(movie_companies title movie_info_idx movie_info movie_keyword)
+ MergeJoin(movie_companies title movie_info_idx movie_info)
+ MergeJoin(movie_companies title movie_info_idx)
+ MergeJoin(movie_companies title)
+ SeqScan(movie_companies)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_info)
+ IndexScan(movie_keyword)
+ Leading(((((movie_companies title) movie_info_idx) movie_info) movie_keyword)) */
+select count(*) from movie_info_idx,movie_info,movie_keyword,movie_companies,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and movie_info_idx.info_type_id<101 and movie_companies.company_type_id<2 and title.kind_id=1 and title.phonetic_code<19409 and title.production_year>115 and title.imdb_index=0;
+
+/*+ NestLoop(title movie_info_idx movie_keyword cast_info movie_info)
+ NestLoop(title movie_info_idx movie_keyword cast_info)
+ NestLoop(title movie_info_idx movie_keyword)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading(((((title movie_info_idx) movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,movie_info,cast_info,movie_info_idx,title where title.id=movie_keyword.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and movie_keyword.keyword_id<130736 and movie_info.info_type_id<8 and cast_info.role_id>2 and title.production_year>0 and title.series_years>0 and title.season_nr=0;
+
+/*+ NestLoop(title movie_info_idx cast_info movie_info)
+ NestLoop(title movie_info_idx cast_info)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_info,cast_info,movie_info_idx,title where title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_info_idx.movie_id and movie_info.info_type_id>2 and cast_info.nr_order>0 and movie_info_idx.info_type_id<101 and title.production_year>116 and title.season_nr>0 and title.episode_nr>0;
+
+/*+ NestLoop(title movie_companies cast_info)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(cast_info)
+ Leading(((title movie_companies) cast_info)) */
+select count(*) from cast_info,movie_companies,title where title.id=cast_info.movie_id and title.id=movie_companies.movie_id and cast_info.nr_order>0 and movie_companies.company_type_id=1 and title.kind_id=1 and title.phonetic_code<761 and title.production_year>124 and title.season_nr=0;
+
+/*+ NestLoop(title movie_companies movie_info_idx movie_keyword)
+ HashJoin(title movie_companies movie_info_idx)
+ HashJoin(title movie_companies)
+ SeqScan(title)
+ SeqScan(movie_companies)
+ SeqScan(movie_info_idx)
+ IndexScan(movie_keyword)
+ Leading((((title movie_companies) movie_info_idx) movie_keyword)) */
+select count(*) from movie_info_idx,movie_keyword,movie_companies,title where title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and movie_info_idx.info_type_id>99 and movie_keyword.keyword_id<78100 and movie_companies.company_type_id>1 and title.imdb_index=0 and title.season_nr>0 and title.kind_id>1;
+
+/*+ NestLoop(title movie_keyword cast_info movie_info)
+ NestLoop(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_info,cast_info,movie_keyword,title where title.id=movie_info.movie_id and title.id=cast_info.movie_id and title.id=movie_keyword.movie_id and movie_info.info_type_id<16 and movie_keyword.keyword_id<434 and title.imdb_index=0 and title.series_years>0 and title.season_nr=0 and title.phonetic_code<6512;
+
+/*+ NestLoop(title movie_companies movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) cast_info)) */
+select count(*) from movie_info_idx,movie_keyword,movie_companies,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_keyword.movie_id and title.id=movie_companies.movie_id and title.id=cast_info.movie_id and movie_keyword.keyword_id<72680 and cast_info.nr_order<27 and title.imdb_index>0 and title.season_nr<1 and title.phonetic_code>8987 and title.series_years>0;
+
+/*+ NestLoop(title movie_keyword cast_info movie_info)
+ NestLoop(title movie_keyword cast_info)
+ NestLoop(title movie_keyword)
+ SeqScan(title)
+ IndexScan(movie_keyword)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_keyword) cast_info) movie_info)) */
+select count(*) from movie_keyword,cast_info,movie_info,title where title.id=movie_keyword.movie_id and title.id=cast_info.movie_id and title.id=movie_info.movie_id and movie_keyword.keyword_id>117 and movie_info.info_type_id<16 and title.kind_id=7 and title.phonetic_code>8694 and title.production_year>116 and title.episode_nr<13;
+
+/*+ NestLoop(title movie_info_idx cast_info movie_info)
+ NestLoop(title movie_info_idx cast_info)
+ HashJoin(title movie_info_idx)
+ SeqScan(title)
+ SeqScan(movie_info_idx)
+ IndexScan(cast_info)
+ IndexScan(movie_info)
+ Leading((((title movie_info_idx) cast_info) movie_info)) */
+select count(*) from movie_info_idx,movie_info,cast_info,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and title.id=cast_info.movie_id and movie_info_idx.info_type_id<101 and movie_info.info_type_id<16 and title.kind_id>1 and title.production_year<126 and title.season_nr=0 and title.phonetic_code>0;
+
+/*+ NestLoop(title movie_info_idx movie_info)
+ NestLoop(title movie_info_idx)
+ SeqScan(title)
+ IndexScan(movie_info_idx)
+ IndexScan(movie_info)
+ Leading(((title movie_info_idx) movie_info)) */
+select count(*) from movie_info_idx,movie_info,title where title.id=movie_info_idx.movie_id and title.id=movie_info.movie_id and movie_info_idx.info_type_id<101 and movie_info.info_type_id<18 and title.phonetic_code<11950 and title.kind_id=7 and title.production_year>113 and title.season_nr=28;
+
+/*+ HashJoin(title movie_companies movie_keyword movie_info_idx cast_info)
+ HashJoin(title movie_companies movie_keyword movie_info_idx)
+ NestLoop(title movie_companies movie_keyword)
+ NestLoop(title movie_companies)
+ SeqScan(title)
+ IndexScan(movie_companies)
+ IndexScan(movie_keyword)
+ SeqScan(movie_info_idx)
+ SeqScan(cast_info)
+ Leading(((((title movie_companies) movie_keyword) movie_info_idx) cast_info)) */
+select count(*) from movie_info_idx,cast_info,movie_companies,movie_keyword,title where title.id=movie_info_idx.movie_id and title.id=cast_info.movie_id and title.id=movie_companies.movie_id and title.id=movie_keyword.movie_id and movie_info_idx.info_type_id<101 and cast_info.role_id>1 and title.production_year>0 and title.season_nr=0 and title.kind_id<7 and title.phonetic_code>0;
+

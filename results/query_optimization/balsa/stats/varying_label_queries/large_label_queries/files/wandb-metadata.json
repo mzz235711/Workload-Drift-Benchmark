@@ -1,0 +1,90 @@
+{
+  "os": "Linux-6.8.0-79-generic-x86_64-with-debian-trixie-sid",
+  "python": "3.7.16",
+  "startedAt": "2025-09-24T11:52:05.220714Z",
+  "args": [
+    "--run",
+    "Balsa_STATSRandSplit",
+    "--local"
+  ],
+  "program": "run.py",
+  "codePath": "run.py",
+  "git": {
+    "remote": "git@github.com:mzz235711/balsa.git",
+    "commit": "a0b45f2371c8c569bb90ad611f39911e5b850852"
+  },
+  "email": "mengzizhong@gmail.com",
+  "root": "/home/zizhongmeng/balsa",
+  "host": "zizhongmeng-U1006",
+  "username": "zizhongmeng",
+  "executable": "/home/zizhongmeng/miniconda3/envs/balsa/bin/python",
+  "codePathLocal": "run.py",
+  "cpu_count": 40,
+  "cpu_count_logical": 80,
+  "gpu": "Tesla V100-SXM2-32GB",
+  "gpu_count": 8,
+  "disk": {
+    "/": {
+      "total": "249257390080",
+      "used": "55895085056"
+    }
+  },
+  "memory": {
+    "total": "540899344384"
+  },
+  "cpu": {
+    "count": 40,
+    "countLogical": 80
+  },
+  "gpu_nvidia": [
+    {
+      "name": "Tesla V100-SXM2-32GB",
+      "memoryTotal": "34359738368",
+      "cudaCores": 5120,
+      "architecture": "Volta"
+    },
+    {
+      "name": "Tesla V100-SXM2-32GB",
+      "memoryTotal": "34359738368",
+      "cudaCores": 5120,
+      "architecture": "Volta"
+    },
+    {
+      "name": "Tesla V100-SXM2-32GB",
+      "memoryTotal": "34359738368",
+      "cudaCores": 5120,
+      "architecture": "Volta"
+    },
+    {
+      "name": "Tesla V100-SXM2-32GB",
+      "memoryTotal": "34359738368",
+      "cudaCores": 5120,
+      "architecture": "Volta"
+    },
+    {
+      "name": "Tesla V100-SXM2-32GB",
+      "memoryTotal": "34359738368",
+      "cudaCores": 5120,
+      "architecture": "Volta"
+    },
+    {
+      "name": "Tesla V100-SXM2-32GB",
+      "memoryTotal": "34359738368",
+      "cudaCores": 5120,
+      "architecture": "Volta"
+    },
+    {
+      "name": "Tesla V100-SXM2-32GB",
+      "memoryTotal": "34359738368",
+      "cudaCores": 5120,
+      "architecture": "Volta"
+    },
+    {
+      "name": "Tesla V100-SXM2-32GB",
+      "memoryTotal": "34359738368",
+      "cudaCores": 5120,
+      "architecture": "Volta"
+    }
+  ],
+  "cudaVersion": "13.0"
+}

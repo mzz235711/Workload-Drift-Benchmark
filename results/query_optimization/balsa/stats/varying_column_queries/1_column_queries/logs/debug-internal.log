@@ -1,0 +1,17 @@
+{"time":"2025-08-21T12:44:01.281672601Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-08-21T12:44:01.281693293Z","level":"INFO","msg":"created symlink","path":"/home/zizhongmeng/balsa/wandb/run-20250821_124401-n5r3jnxf/logs/debug-core.log"}
+{"time":"2025-08-21T12:44:01.541779353Z","level":"INFO","msg":"created new stream","id":"n5r3jnxf"}
+{"time":"2025-08-21T12:44:01.541851594Z","level":"INFO","msg":"stream: started","id":"n5r3jnxf"}
+{"time":"2025-08-21T12:44:01.541897879Z","level":"INFO","msg":"sender: started","stream_id":"n5r3jnxf"}
+{"time":"2025-08-21T12:44:01.541893865Z","level":"INFO","msg":"writer: Do: started","stream_id":"n5r3jnxf"}
+{"time":"2025-08-21T12:44:01.542075809Z","level":"INFO","msg":"handler: started","stream_id":"n5r3jnxf"}
+{"time":"2025-08-21T12:44:02.370063004Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-21T14:27:33.383238413Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/mengzizhong-nanyang-technological-university-singapore/balsa/n5r3jnxf/file_stream"}
+{"time":"2025-08-21T16:44:31.945948775Z","level":"INFO","msg":"stream: closing","id":"n5r3jnxf"}
+{"time":"2025-08-21T16:44:31.946068375Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-21T16:44:31.952355381Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-21T16:44:38.49453722Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-21T16:44:38.799702854Z","level":"INFO","msg":"handler: closed","stream_id":"n5r3jnxf"}
+{"time":"2025-08-21T16:44:38.799750278Z","level":"INFO","msg":"writer: Close: closed","stream_id":"n5r3jnxf"}
+{"time":"2025-08-21T16:44:38.799755659Z","level":"INFO","msg":"sender: closed","stream_id":"n5r3jnxf"}
+{"time":"2025-08-21T16:44:38.799805585Z","level":"INFO","msg":"stream: closed","id":"n5r3jnxf"}

@@ -1,0 +1,25 @@
+{"time":"2025-08-22T08:25:39.633067152Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-08-22T08:25:39.63308681Z","level":"INFO","msg":"created symlink","path":"/home/zizhongmeng/balsa/wandb/run-20250822_082539-cyh2i0c7/logs/debug-core.log"}
+{"time":"2025-08-22T08:25:39.744329306Z","level":"INFO","msg":"created new stream","id":"cyh2i0c7"}
+{"time":"2025-08-22T08:25:39.744374013Z","level":"INFO","msg":"stream: started","id":"cyh2i0c7"}
+{"time":"2025-08-22T08:25:39.74442073Z","level":"INFO","msg":"sender: started","stream_id":"cyh2i0c7"}
+{"time":"2025-08-22T08:25:39.744441054Z","level":"INFO","msg":"handler: started","stream_id":"cyh2i0c7"}
+{"time":"2025-08-22T08:25:39.744419129Z","level":"INFO","msg":"writer: Do: started","stream_id":"cyh2i0c7"}
+{"time":"2025-08-22T08:25:40.469006225Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-22T12:46:25.703910309Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-08-22T12:48:39.958487822Z","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql"}
+{"time":"2025-08-22T12:49:12.058588416Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-08-22T12:49:37.355187602Z","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql"}
+{"time":"2025-08-22T12:50:16.793629242Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-08-22T12:50:58.124610395Z","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql"}
+{"time":"2025-08-22T12:52:06.394010608Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-08-22T12:53:35.032557642Z","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql"}
+{"time":"2025-08-22T20:46:56.592464343Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/mengzizhong-nanyang-technological-university-singapore/balsa/cyh2i0c7/file_stream"}
+{"time":"2025-08-22T22:49:22.4678652Z","level":"INFO","msg":"stream: closing","id":"cyh2i0c7"}
+{"time":"2025-08-22T22:49:22.467917106Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-22T22:49:22.490370217Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-22T22:49:29.337263162Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-22T22:49:29.970410981Z","level":"INFO","msg":"handler: closed","stream_id":"cyh2i0c7"}
+{"time":"2025-08-22T22:49:29.970455334Z","level":"INFO","msg":"writer: Close: closed","stream_id":"cyh2i0c7"}
+{"time":"2025-08-22T22:49:29.970481201Z","level":"INFO","msg":"sender: closed","stream_id":"cyh2i0c7"}
+{"time":"2025-08-22T22:49:29.970519682Z","level":"INFO","msg":"stream: closed","id":"cyh2i0c7"}

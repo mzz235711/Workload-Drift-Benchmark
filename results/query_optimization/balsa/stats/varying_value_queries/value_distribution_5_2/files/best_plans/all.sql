@@ -1,0 +1,2000 @@
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-2 AND p.Score<116 AND p.CommentCount>0 AND p.CommentCount<15 AND u.DownVotes>497 AND u.DownVotes<998 AND v.CreationDate>'2012-06-30 01:02:29'::timestamp AND v.CreationDate<'2014-02-15 12:14:24'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<14 AND b.Date>'2010-11-02 00:40:46'::timestamp AND b.Date<'2011-03-08 10:32:40'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>0 AND p.Score<61 AND p.CommentCount>3 AND p.CommentCount<23 AND u.DownVotes>209 AND u.DownVotes<1841 AND v.CreationDate>'2009-04-18 18:13:01'::timestamp AND v.CreationDate<'2011-11-10 11:42:54'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<8 AND b.Date>'2010-12-25 17:05:21'::timestamp AND b.Date<'2012-06-25 00:58:56'::timestamp;
+
+/*+ NestLoop(p u b v)
+ NestLoop(p u b)
+ NestLoop(p u)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((p u) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>6 AND p.Score<142 AND p.CommentCount>3 AND p.CommentCount<37 AND u.DownVotes>262 AND u.DownVotes<530 AND v.CreationDate>'2009-05-02 14:01:26'::timestamp AND v.CreationDate<'2012-04-26 00:37:05'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<12 AND b.Date>'2013-07-02 05:51:18'::timestamp AND b.Date<'2014-03-20 13:14:16'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>3 AND p.Score<61 AND p.CommentCount>0 AND p.CommentCount<25 AND u.DownVotes>62 AND u.DownVotes<1756 AND v.CreationDate>'2009-03-13 13:18:15'::timestamp AND v.CreationDate<'2011-12-17 19:17:11'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<5 AND b.Date>'2013-04-29 10:57:23'::timestamp AND b.Date<'2013-07-12 08:31:10'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>3 AND p.Score<181 AND p.CommentCount>9 AND p.CommentCount<17 AND u.DownVotes>299 AND u.DownVotes<694 AND v.CreationDate>'2010-10-30 14:04:54'::timestamp AND v.CreationDate<'2012-10-27 07:44:41'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<11 AND b.Date>'2011-05-31 09:39:02'::timestamp AND b.Date<'2013-07-10 19:37:24'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>2 AND p.Score<170 AND p.CommentCount>9 AND p.CommentCount<35 AND u.DownVotes>712 AND u.DownVotes<1758 AND v.CreationDate>'2010-07-23 16:50:02'::timestamp AND v.CreationDate<'2012-02-14 21:01:16'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<14 AND b.Date>'2011-12-29 06:17:56'::timestamp AND b.Date<'2012-02-13 06:40:28'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-8 AND p.Score<107 AND p.CommentCount>7 AND p.CommentCount<24 AND u.DownVotes>388 AND u.DownVotes<1529 AND v.CreationDate>'2011-09-03 10:12:38'::timestamp AND v.CreationDate<'2013-06-10 18:00:09'::timestamp AND v.VoteTypeId>9 AND v.VoteTypeId<13 AND b.Date>'2012-04-25 17:30:56'::timestamp AND b.Date<'2012-09-08 23:43:43'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>26 AND p.Score<56 AND p.CommentCount>1 AND p.CommentCount<25 AND u.DownVotes>139 AND u.DownVotes<1901 AND v.CreationDate>'2011-08-30 15:17:04'::timestamp AND v.CreationDate<'2013-01-21 05:40:18'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<12 AND b.Date>'2013-12-09 04:46:52'::timestamp AND b.Date<'2014-06-09 23:05:34'::timestamp;
+
+/*+ HashJoin(v p u b)
+ NestLoop(u b)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ Leading(((v p) (u b))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>1 AND p.Score<91 AND p.CommentCount>1 AND p.CommentCount<32 AND u.DownVotes>334 AND u.DownVotes<1596 AND v.CreationDate>'2010-06-19 15:27:39'::timestamp AND v.CreationDate<'2012-06-18 22:37:31'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<13 AND b.Date>'2012-04-16 10:19:50'::timestamp AND b.Date<'2014-06-08 06:21:53'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-7 AND p.Score<17 AND p.CommentCount>11 AND p.CommentCount<34 AND u.DownVotes>194 AND u.DownVotes<1405 AND v.CreationDate>'2011-05-12 09:41:51'::timestamp AND v.CreationDate<'2012-05-18 03:03:46'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<10 AND b.Date>'2010-09-19 12:04:57'::timestamp AND b.Date<'2011-10-31 21:33:54'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>46 AND p.Score<179 AND p.CommentCount>13 AND p.CommentCount<28 AND u.DownVotes>96 AND u.DownVotes<1665 AND v.CreationDate>'2009-03-17 07:17:34'::timestamp AND v.CreationDate<'2014-02-06 00:36:37'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<7 AND b.Date>'2012-11-23 14:04:48'::timestamp AND b.Date<'2014-04-20 15:35:15'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>55 AND p.Score<154 AND p.CommentCount>5 AND p.CommentCount<27 AND u.DownVotes>11 AND u.DownVotes<1510 AND v.CreationDate>'2010-08-09 02:34:48'::timestamp AND v.CreationDate<'2011-05-21 09:56:43'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<15 AND b.Date>'2011-02-25 10:10:44'::timestamp AND b.Date<'2013-05-09 21:48:35'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-5 AND p.Score<123 AND p.CommentCount>16 AND p.CommentCount<25 AND u.DownVotes>473 AND u.DownVotes<890 AND v.CreationDate>'2011-03-10 22:21:49'::timestamp AND v.CreationDate<'2013-02-16 05:22:55'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<14 AND b.Date>'2010-09-21 03:46:16'::timestamp AND b.Date<'2014-01-01 21:02:59'::timestamp;
+
+/*+ HashJoin(v p b u)
+ HashJoin(b u)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ SeqScan(b)
+ IndexScan(u)
+ Leading(((v p) (b u))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>0 AND p.Score<33 AND p.CommentCount>3 AND p.CommentCount<18 AND u.DownVotes>276 AND u.DownVotes<1618 AND v.CreationDate>'2010-03-28 23:59:32'::timestamp AND v.CreationDate<'2011-07-08 22:10:00'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<6 AND b.Date>'2012-04-01 01:42:53'::timestamp AND b.Date<'2014-04-11 12:13:03'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>39 AND p.Score<48 AND p.CommentCount>19 AND p.CommentCount<23 AND u.DownVotes>22 AND u.DownVotes<865 AND v.CreationDate>'2010-05-11 10:07:22'::timestamp AND v.CreationDate<'2011-05-15 16:57:30'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<9 AND b.Date>'2011-09-13 21:01:24'::timestamp AND b.Date<'2013-06-15 07:42:20'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>3 AND p.Score<173 AND p.CommentCount>5 AND p.CommentCount<26 AND u.DownVotes>294 AND u.DownVotes<1467 AND v.CreationDate>'2009-11-29 01:28:26'::timestamp AND v.CreationDate<'2012-12-11 05:58:40'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<13 AND b.Date>'2010-12-05 19:35:30'::timestamp AND b.Date<'2011-10-28 02:04:36'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>56 AND p.Score<84 AND p.CommentCount>6 AND p.CommentCount<41 AND u.DownVotes>631 AND u.DownVotes<803 AND v.CreationDate>'2011-10-17 17:03:03'::timestamp AND v.CreationDate<'2012-06-15 03:16:10'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<14 AND b.Date>'2011-05-04 04:21:19'::timestamp AND b.Date<'2014-07-31 23:16:03'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-16 AND p.Score<158 AND p.CommentCount>12 AND p.CommentCount<38 AND u.DownVotes>386 AND u.DownVotes<1013 AND v.CreationDate>'2009-05-18 01:33:14'::timestamp AND v.CreationDate<'2013-01-28 20:59:12'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<11 AND b.Date>'2012-08-08 20:13:02'::timestamp AND b.Date<'2013-09-05 17:49:52'::timestamp;
+
+/*+ NestLoop(p u b v)
+ NestLoop(p u b)
+ NestLoop(p u)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((p u) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>46 AND p.Score<168 AND p.CommentCount>5 AND p.CommentCount<36 AND u.DownVotes>686 AND u.DownVotes<1346 AND v.CreationDate>'2010-02-02 02:00:35'::timestamp AND v.CreationDate<'2013-12-17 21:33:01'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<8 AND b.Date>'2011-12-04 11:12:52'::timestamp AND b.Date<'2012-01-21 21:49:56'::timestamp;
+
+/*+ HashJoin(v p u b)
+ NestLoop(v p u)
+ HashJoin(v p)
+ SeqScan(v)
+ IndexScan(p)
+ IndexScan(u)
+ SeqScan(b)
+ Leading((((v p) u) b)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-8 AND p.Score<26 AND p.CommentCount>4 AND p.CommentCount<23 AND u.DownVotes>1 AND u.DownVotes<1304 AND v.CreationDate>'2011-11-23 16:21:02'::timestamp AND v.CreationDate<'2014-05-30 16:29:42'::timestamp AND v.VoteTypeId>8 AND v.VoteTypeId<14 AND b.Date>'2011-05-11 05:28:33'::timestamp AND b.Date<'2013-05-05 23:31:45'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>29 AND p.Score<177 AND p.CommentCount>5 AND p.CommentCount<42 AND u.DownVotes>428 AND u.DownVotes<1868 AND v.CreationDate>'2011-12-20 04:13:02'::timestamp AND v.CreationDate<'2013-04-22 16:15:56'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<7 AND b.Date>'2011-06-10 15:16:24'::timestamp AND b.Date<'2012-08-05 09:45:12'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>5 AND p.Score<139 AND p.CommentCount>0 AND p.CommentCount<3 AND u.DownVotes>681 AND u.DownVotes<1792 AND v.CreationDate>'2009-11-30 14:13:34'::timestamp AND v.CreationDate<'2012-10-15 14:32:35'::timestamp AND v.VoteTypeId>5 AND v.VoteTypeId<12 AND b.Date>'2011-08-31 20:21:19'::timestamp AND b.Date<'2012-12-25 01:51:03'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-11 AND p.Score<122 AND p.CommentCount>6 AND p.CommentCount<28 AND u.DownVotes>507 AND u.DownVotes<1327 AND v.CreationDate>'2009-12-20 10:24:32'::timestamp AND v.CreationDate<'2012-07-05 21:06:42'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<8 AND b.Date>'2012-04-20 06:32:42'::timestamp AND b.Date<'2012-05-30 05:06:21'::timestamp;
+
+/*+ HashJoin(v u p b)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ Leading((v ((u p) b))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>51 AND p.Score<90 AND p.CommentCount>0 AND p.CommentCount<11 AND u.DownVotes>60 AND u.DownVotes<1656 AND v.CreationDate>'2010-11-29 10:28:59'::timestamp AND v.CreationDate<'2011-01-21 12:58:50'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<11 AND b.Date>'2013-01-05 03:24:04'::timestamp AND b.Date<'2014-03-11 23:02:55'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>42 AND p.Score<155 AND p.CommentCount>1 AND p.CommentCount<38 AND u.DownVotes>1 AND u.DownVotes<598 AND v.CreationDate>'2011-02-07 23:55:47'::timestamp AND v.CreationDate<'2012-05-26 17:48:04'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<8 AND b.Date>'2013-02-10 14:11:44'::timestamp AND b.Date<'2013-04-01 11:39:33'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>4 AND p.Score<77 AND p.CommentCount>16 AND p.CommentCount<30 AND u.DownVotes>773 AND u.DownVotes<1672 AND v.CreationDate>'2010-08-07 10:42:45'::timestamp AND v.CreationDate<'2013-03-29 07:08:08'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<11 AND b.Date>'2011-04-05 13:17:57'::timestamp AND b.Date<'2011-10-18 00:12:57'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-7 AND p.Score<46 AND p.CommentCount>12 AND p.CommentCount<22 AND u.DownVotes>711 AND u.DownVotes<1369 AND v.CreationDate>'2013-04-18 19:16:39'::timestamp AND v.CreationDate<'2014-07-29 00:39:14'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<7 AND b.Date>'2010-12-14 13:15:38'::timestamp AND b.Date<'2011-02-22 09:09:10'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>6 AND p.Score<62 AND p.CommentCount>0 AND p.CommentCount<42 AND u.DownVotes>245 AND u.DownVotes<1645 AND v.CreationDate>'2011-07-11 21:51:03'::timestamp AND v.CreationDate<'2012-07-02 02:22:05'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<12 AND b.Date>'2012-09-15 09:15:43'::timestamp AND b.Date<'2014-03-31 05:57:12'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-7 AND p.Score<70 AND p.CommentCount>16 AND p.CommentCount<24 AND u.DownVotes>183 AND u.DownVotes<561 AND v.CreationDate>'2009-09-16 12:17:52'::timestamp AND v.CreationDate<'2013-11-12 15:50:33'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<14 AND b.Date>'2012-05-20 02:11:33'::timestamp AND b.Date<'2012-09-16 21:41:03'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-9 AND p.Score<66 AND p.CommentCount>2 AND p.CommentCount<21 AND u.DownVotes>138 AND u.DownVotes<1314 AND v.CreationDate>'2010-07-02 11:13:17'::timestamp AND v.CreationDate<'2012-05-29 04:00:31'::timestamp AND v.VoteTypeId>10 AND v.VoteTypeId<15 AND b.Date>'2012-08-12 03:21:58'::timestamp AND b.Date<'2012-10-02 02:09:21'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>16 AND p.Score<104 AND p.CommentCount>8 AND p.CommentCount<18 AND u.DownVotes>199 AND u.DownVotes<969 AND v.CreationDate>'2014-01-19 22:52:18'::timestamp AND v.CreationDate<'2014-06-25 23:31:18'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<14 AND b.Date>'2013-05-08 01:24:16'::timestamp AND b.Date<'2013-09-20 21:01:25'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>20 AND p.Score<26 AND p.CommentCount>8 AND p.CommentCount<42 AND u.DownVotes>665 AND u.DownVotes<1041 AND v.CreationDate>'2010-10-16 12:36:38'::timestamp AND v.CreationDate<'2012-08-09 19:34:29'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<14 AND b.Date>'2011-01-06 19:57:44'::timestamp AND b.Date<'2013-01-16 18:11:56'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>40 AND p.Score<80 AND p.CommentCount>4 AND p.CommentCount<38 AND u.DownVotes>367 AND u.DownVotes<1284 AND v.CreationDate>'2011-08-03 06:51:24'::timestamp AND v.CreationDate<'2012-12-15 22:44:22'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<7 AND b.Date>'2010-11-07 14:04:01'::timestamp AND b.Date<'2012-09-12 11:57:55'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-10 AND p.Score<23 AND p.CommentCount>4 AND p.CommentCount<17 AND u.DownVotes>63 AND u.DownVotes<517 AND v.CreationDate>'2009-06-14 08:26:43'::timestamp AND v.CreationDate<'2011-06-21 16:38:48'::timestamp AND v.VoteTypeId>5 AND v.VoteTypeId<15 AND b.Date>'2011-05-17 14:17:14'::timestamp AND b.Date<'2012-04-16 06:37:56'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-12 AND p.Score<144 AND p.CommentCount>21 AND p.CommentCount<36 AND u.DownVotes>173 AND u.DownVotes<1717 AND v.CreationDate>'2011-12-05 09:29:45'::timestamp AND v.CreationDate<'2012-12-16 22:45:58'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<14 AND b.Date>'2011-02-25 08:45:40'::timestamp AND b.Date<'2014-04-02 09:26:51'::timestamp;
+
+/*+ MergeJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-15 AND p.Score<55 AND p.CommentCount>6 AND p.CommentCount<17 AND u.DownVotes>124 AND u.DownVotes<1255 AND v.CreationDate>'2011-03-01 05:51:59'::timestamp AND v.CreationDate<'2014-03-08 11:37:31'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<15 AND b.Date>'2011-10-17 17:15:38'::timestamp AND b.Date<'2012-06-02 13:55:55'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>29 AND p.Score<147 AND p.CommentCount>0 AND p.CommentCount<18 AND u.DownVotes>111 AND u.DownVotes<877 AND v.CreationDate>'2012-02-09 06:36:23'::timestamp AND v.CreationDate<'2012-03-04 18:51:29'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<14 AND b.Date>'2012-11-18 01:45:11'::timestamp AND b.Date<'2012-12-17 12:57:50'::timestamp;
+
+/*+ NestLoop(u p b v)
+ MergeJoin(u p b)
+ MergeJoin(u p)
+ SeqScan(u)
+ SeqScan(p)
+ SeqScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>21 AND p.Score<157 AND p.CommentCount>2 AND p.CommentCount<24 AND u.DownVotes>336 AND u.DownVotes<1049 AND v.CreationDate>'2010-07-31 21:58:46'::timestamp AND v.CreationDate<'2014-08-07 01:05:09'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<15 AND b.Date>'2011-06-11 17:59:45'::timestamp AND b.Date<'2011-09-13 03:39:28'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>16 AND p.Score<130 AND p.CommentCount>10 AND p.CommentCount<21 AND u.DownVotes>98 AND u.DownVotes<815 AND v.CreationDate>'2010-09-14 05:07:42'::timestamp AND v.CreationDate<'2014-06-03 18:53:06'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<13 AND b.Date>'2011-07-05 02:21:58'::timestamp AND b.Date<'2013-10-24 18:21:34'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-6 AND p.Score<101 AND p.CommentCount>14 AND p.CommentCount<32 AND u.DownVotes>119 AND u.DownVotes<816 AND v.CreationDate>'2010-03-21 18:54:19'::timestamp AND v.CreationDate<'2012-01-02 13:41:23'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<15 AND b.Date>'2010-08-13 19:55:54'::timestamp AND b.Date<'2013-10-01 05:05:53'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>15 AND p.Score<27 AND p.CommentCount>7 AND p.CommentCount<37 AND u.DownVotes>279 AND u.DownVotes<489 AND v.CreationDate>'2011-07-25 11:47:51'::timestamp AND v.CreationDate<'2012-05-04 10:27:45'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<5 AND b.Date>'2010-07-29 08:13:24'::timestamp AND b.Date<'2011-12-06 17:56:45'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>4 AND p.Score<36 AND p.CommentCount>10 AND p.CommentCount<34 AND u.DownVotes>93 AND u.DownVotes<1435 AND v.CreationDate>'2009-10-29 10:57:14'::timestamp AND v.CreationDate<'2011-11-14 15:53:51'::timestamp AND v.VoteTypeId>5 AND v.VoteTypeId<12 AND b.Date>'2011-10-09 11:41:08'::timestamp AND b.Date<'2012-06-08 10:16:34'::timestamp;
+
+/*+ HashJoin(v b p u)
+ HashJoin(b p u)
+ NestLoop(p u)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(p)
+ IndexScan(u)
+ Leading((v (b (p u)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>109 AND p.Score<173 AND p.CommentCount>9 AND p.CommentCount<24 AND u.DownVotes>616 AND u.DownVotes<825 AND v.CreationDate>'2010-11-19 21:04:29'::timestamp AND v.CreationDate<'2012-03-08 02:40:07'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<5 AND b.Date>'2011-09-09 05:24:45'::timestamp AND b.Date<'2012-10-19 20:16:15'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>86 AND p.Score<186 AND p.CommentCount>7 AND p.CommentCount<16 AND u.DownVotes>734 AND u.DownVotes<1585 AND v.CreationDate>'2011-03-26 05:41:35'::timestamp AND v.CreationDate<'2012-11-19 00:40:20'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<7 AND b.Date>'2011-11-14 17:09:54'::timestamp AND b.Date<'2011-12-26 20:45:56'::timestamp;
+
+/*+ NestLoop(p u b v)
+ NestLoop(p u b)
+ NestLoop(p u)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((p u) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-12 AND p.Score<105 AND p.CommentCount>9 AND p.CommentCount<11 AND u.DownVotes>671 AND u.DownVotes<829 AND v.CreationDate>'2011-07-05 00:04:19'::timestamp AND v.CreationDate<'2013-08-09 04:34:24'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<13 AND b.Date>'2012-11-07 18:54:48'::timestamp AND b.Date<'2013-10-05 00:13:30'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-7 AND p.Score<139 AND p.CommentCount>2 AND p.CommentCount<21 AND u.DownVotes>175 AND u.DownVotes<500 AND v.CreationDate>'2012-01-04 15:35:23'::timestamp AND v.CreationDate<'2014-08-01 10:13:58'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<8 AND b.Date>'2011-12-28 03:59:00'::timestamp AND b.Date<'2013-07-28 00:54:29'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>59 AND p.Score<115 AND p.CommentCount>0 AND p.CommentCount<25 AND u.DownVotes>634 AND u.DownVotes<878 AND v.CreationDate>'2010-09-06 13:02:41'::timestamp AND v.CreationDate<'2011-12-31 15:38:04'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<11 AND b.Date>'2012-09-10 15:47:43'::timestamp AND b.Date<'2014-07-13 22:25:27'::timestamp;
+
+/*+ HashJoin(v p u b)
+ NestLoop(u b)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ Leading(((v p) (u b))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>0 AND p.Score<105 AND p.CommentCount>0 AND p.CommentCount<15 AND u.DownVotes>749 AND u.DownVotes<799 AND v.CreationDate>'2009-11-14 13:07:49'::timestamp AND v.CreationDate<'2012-06-25 03:02:46'::timestamp AND v.VoteTypeId>5 AND v.VoteTypeId<12 AND b.Date>'2010-08-25 14:33:40'::timestamp AND b.Date<'2012-10-17 11:38:11'::timestamp;
+
+/*+ HashJoin(u b p v)
+ NestLoop(p v)
+ NestLoop(u b)
+ SeqScan(u)
+ IndexScan(b)
+ IndexScan(p)
+ IndexScan(v)
+ Leading(((u b) (p v))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>0 AND p.Score<160 AND p.CommentCount>16 AND p.CommentCount<22 AND u.DownVotes>99 AND u.DownVotes<851 AND v.CreationDate>'2012-01-07 00:49:10'::timestamp AND v.CreationDate<'2012-11-28 04:09:36'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<12 AND b.Date>'2012-10-06 22:36:02'::timestamp AND b.Date<'2012-10-21 13:01:23'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>12 AND p.Score<136 AND p.CommentCount>5 AND p.CommentCount<7 AND u.DownVotes>404 AND u.DownVotes<1412 AND v.CreationDate>'2010-08-29 15:16:46'::timestamp AND v.CreationDate<'2014-02-13 10:07:11'::timestamp AND v.VoteTypeId>10 AND v.VoteTypeId<15 AND b.Date>'2011-08-21 19:47:13'::timestamp AND b.Date<'2014-06-22 12:39:36'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-5 AND p.Score<121 AND p.CommentCount>7 AND p.CommentCount<23 AND u.DownVotes>728 AND u.DownVotes<843 AND v.CreationDate>'2011-08-11 16:05:44'::timestamp AND v.CreationDate<'2013-07-09 17:39:40'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<14 AND b.Date>'2011-03-13 19:47:28'::timestamp AND b.Date<'2012-01-13 02:51:57'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-5 AND p.Score<33 AND p.CommentCount>3 AND p.CommentCount<13 AND u.DownVotes>68 AND u.DownVotes<290 AND v.CreationDate>'2011-09-12 22:57:08'::timestamp AND v.CreationDate<'2014-08-23 12:16:15'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<7 AND b.Date>'2010-09-28 07:53:37'::timestamp AND b.Date<'2012-08-28 08:47:32'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-2 AND p.Score<103 AND p.CommentCount>1 AND p.CommentCount<17 AND u.DownVotes>606 AND u.DownVotes<1528 AND v.CreationDate>'2011-05-02 15:33:09'::timestamp AND v.CreationDate<'2012-12-20 12:34:33'::timestamp AND v.VoteTypeId>5 AND v.VoteTypeId<13 AND b.Date>'2010-10-07 11:33:44'::timestamp AND b.Date<'2010-10-26 12:24:16'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>33 AND p.Score<83 AND p.CommentCount>0 AND p.CommentCount<11 AND u.DownVotes>105 AND u.DownVotes<1767 AND v.CreationDate>'2011-10-31 04:12:58'::timestamp AND v.CreationDate<'2013-04-03 05:19:38'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<15 AND b.Date>'2012-01-31 03:09:41'::timestamp AND b.Date<'2013-01-20 17:04:12'::timestamp;
+
+/*+ NestLoop(u p b v)
+ MergeJoin(u p b)
+ MergeJoin(u p)
+ SeqScan(u)
+ SeqScan(p)
+ SeqScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>109 AND p.Score<147 AND p.CommentCount>7 AND p.CommentCount<41 AND u.DownVotes>311 AND u.DownVotes<1100 AND v.CreationDate>'2010-06-30 03:23:10'::timestamp AND v.CreationDate<'2014-06-15 12:46:24'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<4 AND b.Date>'2010-08-10 23:48:28'::timestamp AND b.Date<'2013-06-18 02:45:13'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-12 AND p.Score<143 AND p.CommentCount>1 AND p.CommentCount<38 AND u.DownVotes>376 AND u.DownVotes<541 AND v.CreationDate>'2011-10-09 00:29:19'::timestamp AND v.CreationDate<'2012-03-01 03:53:38'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<9 AND b.Date>'2012-06-27 20:56:33'::timestamp AND b.Date<'2013-10-30 07:06:50'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>15 AND p.Score<160 AND p.CommentCount>0 AND p.CommentCount<43 AND u.DownVotes>42 AND u.DownVotes<497 AND v.CreationDate>'2013-11-12 03:33:27'::timestamp AND v.CreationDate<'2014-06-11 08:47:30'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<9 AND b.Date>'2010-07-29 15:08:51'::timestamp AND b.Date<'2012-09-08 16:08:16'::timestamp;
+
+/*+ MergeJoin(u b v p)
+ HashJoin(v p)
+ MergeJoin(u b)
+ IndexScan(u)
+ IndexScan(b)
+ SeqScan(v)
+ IndexScan(p)
+ Leading(((u b) (v p))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>2 AND p.Score<40 AND p.CommentCount>5 AND p.CommentCount<13 AND u.DownVotes>776 AND u.DownVotes<957 AND v.CreationDate>'2011-01-01 07:39:58'::timestamp AND v.CreationDate<'2014-07-08 13:53:32'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<11 AND b.Date>'2011-04-11 20:00:38'::timestamp AND b.Date<'2014-03-14 21:53:32'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>22 AND p.Score<116 AND p.CommentCount>1 AND p.CommentCount<9 AND u.DownVotes>105 AND u.DownVotes<746 AND v.CreationDate>'2012-12-10 13:28:21'::timestamp AND v.CreationDate<'2013-10-20 00:33:05'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<11 AND b.Date>'2013-01-14 02:43:18'::timestamp AND b.Date<'2014-03-02 15:28:49'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-6 AND p.Score<107 AND p.CommentCount>8 AND p.CommentCount<19 AND u.DownVotes>139 AND u.DownVotes<1879 AND v.CreationDate>'2011-03-18 17:52:26'::timestamp AND v.CreationDate<'2014-04-10 00:03:05'::timestamp AND v.VoteTypeId>10 AND v.VoteTypeId<13 AND b.Date>'2013-06-07 00:44:58'::timestamp AND b.Date<'2014-08-06 02:21:07'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>12 AND p.Score<144 AND p.CommentCount>1 AND p.CommentCount<27 AND u.DownVotes>246 AND u.DownVotes<1296 AND v.CreationDate>'2011-03-15 10:40:49'::timestamp AND v.CreationDate<'2013-09-11 12:40:43'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<11 AND b.Date>'2011-06-13 05:37:41'::timestamp AND b.Date<'2012-06-16 14:31:05'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>6 AND p.Score<144 AND p.CommentCount>9 AND p.CommentCount<44 AND u.DownVotes>598 AND u.DownVotes<1275 AND v.CreationDate>'2009-06-01 23:02:13'::timestamp AND v.CreationDate<'2013-08-03 20:57:22'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<15 AND b.Date>'2013-06-16 09:10:20'::timestamp AND b.Date<'2014-06-01 05:08:01'::timestamp;
+
+/*+ NestLoop(u p v b)
+ NestLoop(u p v)
+ MergeJoin(u p)
+ SeqScan(u)
+ SeqScan(p)
+ IndexScan(v)
+ IndexScan(b)
+ Leading((((u p) v) b)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>21 AND p.Score<79 AND p.CommentCount>2 AND p.CommentCount<9 AND u.DownVotes>103 AND u.DownVotes<1484 AND v.CreationDate>'2009-07-16 08:14:48'::timestamp AND v.CreationDate<'2011-08-28 19:10:33'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<4 AND b.Date>'2011-06-15 05:30:28'::timestamp AND b.Date<'2011-09-13 02:54:41'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>11 AND p.Score<168 AND p.CommentCount>18 AND p.CommentCount<26 AND u.DownVotes>249 AND u.DownVotes<1361 AND v.CreationDate>'2009-02-02 09:53:11'::timestamp AND v.CreationDate<'2014-03-18 23:09:40'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<4 AND b.Date>'2012-01-07 11:55:01'::timestamp AND b.Date<'2013-06-24 20:40:56'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-16 AND p.Score<76 AND p.CommentCount>18 AND p.CommentCount<44 AND u.DownVotes>655 AND u.DownVotes<1732 AND v.CreationDate>'2009-06-08 04:50:44'::timestamp AND v.CreationDate<'2013-01-12 23:48:40'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<14 AND b.Date>'2010-09-23 23:38:21'::timestamp AND b.Date<'2013-01-21 10:09:19'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-16 AND p.Score<82 AND p.CommentCount>9 AND p.CommentCount<21 AND u.DownVotes>512 AND u.DownVotes<1555 AND v.CreationDate>'2012-06-18 22:22:31'::timestamp AND v.CreationDate<'2013-02-26 04:55:42'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<14 AND b.Date>'2010-11-06 15:56:54'::timestamp AND b.Date<'2012-09-28 17:26:29'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-6 AND p.Score<110 AND p.CommentCount>5 AND p.CommentCount<34 AND u.DownVotes>122 AND u.DownVotes<497 AND v.CreationDate>'2010-12-06 23:46:13'::timestamp AND v.CreationDate<'2014-09-09 09:22:19'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<12 AND b.Date>'2012-06-11 18:43:31'::timestamp AND b.Date<'2013-01-08 20:35:56'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>43 AND p.Score<111 AND p.CommentCount>3 AND p.CommentCount<20 AND u.DownVotes>655 AND u.DownVotes<1330 AND v.CreationDate>'2012-08-28 09:58:49'::timestamp AND v.CreationDate<'2013-02-01 13:21:34'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<8 AND b.Date>'2011-05-07 00:57:02'::timestamp AND b.Date<'2012-08-19 19:59:55'::timestamp;
+
+/*+ HashJoin(v p b u)
+ HashJoin(b u)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ SeqScan(b)
+ IndexScan(u)
+ Leading(((v p) (b u))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>22 AND p.Score<31 AND p.CommentCount>4 AND p.CommentCount<42 AND u.DownVotes>494 AND u.DownVotes<1146 AND v.CreationDate>'2011-06-03 03:19:41'::timestamp AND v.CreationDate<'2014-07-30 02:55:36'::timestamp AND v.VoteTypeId>8 AND v.VoteTypeId<13 AND b.Date>'2011-01-10 03:31:20'::timestamp AND b.Date<'2014-06-12 01:45:29'::timestamp;
+
+/*+ HashJoin(v p u b)
+ NestLoop(u b)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ Leading(((v p) (u b))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-6 AND p.Score<66 AND p.CommentCount>3 AND p.CommentCount<38 AND u.DownVotes>366 AND u.DownVotes<1589 AND v.CreationDate>'2010-06-08 01:24:20'::timestamp AND v.CreationDate<'2012-08-31 23:10:22'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<11 AND b.Date>'2010-10-19 18:03:22'::timestamp AND b.Date<'2014-04-04 05:36:08'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>3 AND p.Score<108 AND p.CommentCount>14 AND p.CommentCount<29 AND u.DownVotes>91 AND u.DownVotes<1509 AND v.CreationDate>'2011-09-11 12:06:12'::timestamp AND v.CreationDate<'2014-07-06 19:32:38'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<12 AND b.Date>'2011-10-06 01:08:39'::timestamp AND b.Date<'2012-01-30 09:50:03'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>118 AND p.Score<176 AND p.CommentCount>10 AND p.CommentCount<15 AND u.DownVotes>31 AND u.DownVotes<485 AND v.CreationDate>'2010-05-23 06:07:27'::timestamp AND v.CreationDate<'2012-08-01 19:30:06'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<4 AND b.Date>'2013-07-08 02:18:13'::timestamp AND b.Date<'2014-05-31 10:12:46'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-15 AND p.Score<-3 AND p.CommentCount>13 AND p.CommentCount<22 AND u.DownVotes>69 AND u.DownVotes<1038 AND v.CreationDate>'2011-07-19 14:33:57'::timestamp AND v.CreationDate<'2014-07-20 02:34:27'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<8 AND b.Date>'2012-07-16 02:03:56'::timestamp AND b.Date<'2014-09-11 03:20:01'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>15 AND p.Score<117 AND p.CommentCount>1 AND p.CommentCount<38 AND u.DownVotes>635 AND u.DownVotes<1457 AND v.CreationDate>'2009-03-31 12:55:19'::timestamp AND v.CreationDate<'2011-06-15 15:32:52'::timestamp AND v.VoteTypeId>5 AND v.VoteTypeId<14 AND b.Date>'2013-09-12 16:30:21'::timestamp AND b.Date<'2014-08-19 09:26:42'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-8 AND p.Score<94 AND p.CommentCount>5 AND p.CommentCount<15 AND u.DownVotes>417 AND u.DownVotes<997 AND v.CreationDate>'2011-02-25 19:19:16'::timestamp AND v.CreationDate<'2012-01-03 18:11:13'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<13 AND b.Date>'2011-12-23 12:33:32'::timestamp AND b.Date<'2013-08-18 21:46:25'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-8 AND p.Score<107 AND p.CommentCount>5 AND p.CommentCount<10 AND u.DownVotes>220 AND u.DownVotes<1665 AND v.CreationDate>'2009-10-08 12:15:02'::timestamp AND v.CreationDate<'2014-02-17 15:50:58'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<7 AND b.Date>'2012-01-04 19:12:01'::timestamp AND b.Date<'2012-07-16 05:36:50'::timestamp;
+
+/*+ HashJoin(v b p u)
+ HashJoin(b p u)
+ NestLoop(p u)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(p)
+ IndexScan(u)
+ Leading((v (b (p u)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>34 AND p.Score<41 AND p.CommentCount>2 AND p.CommentCount<12 AND u.DownVotes>701 AND u.DownVotes<1435 AND v.CreationDate>'2011-11-17 23:48:48'::timestamp AND v.CreationDate<'2013-11-27 13:11:58'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<13 AND b.Date>'2011-06-30 23:57:07'::timestamp AND b.Date<'2012-03-29 01:24:03'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-14 AND p.Score<41 AND p.CommentCount>4 AND p.CommentCount<26 AND u.DownVotes>140 AND u.DownVotes<1380 AND v.CreationDate>'2010-07-09 00:01:25'::timestamp AND v.CreationDate<'2012-03-11 07:25:30'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<11 AND b.Date>'2013-12-15 08:57:22'::timestamp AND b.Date<'2014-01-14 22:23:42'::timestamp;
+
+/*+ NestLoop(u p v b)
+ NestLoop(u p v)
+ MergeJoin(u p)
+ SeqScan(u)
+ SeqScan(p)
+ IndexScan(v)
+ IndexScan(b)
+ Leading((((u p) v) b)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>75 AND p.Score<168 AND p.CommentCount>1 AND p.CommentCount<3 AND u.DownVotes>72 AND u.DownVotes<911 AND v.CreationDate>'2011-05-21 15:13:28'::timestamp AND v.CreationDate<'2012-01-02 05:04:49'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<6 AND b.Date>'2012-02-02 16:15:11'::timestamp AND b.Date<'2012-03-11 04:16:31'::timestamp;
+
+/*+ HashJoin(v p u b)
+ NestLoop(v p u)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ IndexScan(u)
+ SeqScan(b)
+ Leading((((v p) u) b)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-16 AND p.Score<140 AND p.CommentCount>0 AND p.CommentCount<28 AND u.DownVotes>311 AND u.DownVotes<1206 AND v.CreationDate>'2009-05-17 22:36:06'::timestamp AND v.CreationDate<'2011-07-03 05:37:16'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<13 AND b.Date>'2012-08-07 22:39:55'::timestamp AND b.Date<'2014-03-14 09:22:14'::timestamp;
+
+/*+ HashJoin(v p b u)
+ HashJoin(b u)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ SeqScan(b)
+ IndexScan(u)
+ Leading(((v p) (b u))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>31 AND p.Score<191 AND p.CommentCount>2 AND p.CommentCount<38 AND u.DownVotes>108 AND u.DownVotes<317 AND v.CreationDate>'2009-04-20 11:25:18'::timestamp AND v.CreationDate<'2011-05-14 14:50:29'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<11 AND b.Date>'2011-01-04 00:45:23'::timestamp AND b.Date<'2014-03-12 18:33:25'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>26 AND p.Score<125 AND p.CommentCount>8 AND p.CommentCount<15 AND u.DownVotes>417 AND u.DownVotes<1193 AND v.CreationDate>'2013-07-27 12:10:53'::timestamp AND v.CreationDate<'2014-05-08 22:20:52'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<13 AND b.Date>'2011-02-25 21:33:58'::timestamp AND b.Date<'2014-01-22 19:09:30'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>43 AND p.Score<79 AND p.CommentCount>3 AND p.CommentCount<19 AND u.DownVotes>169 AND u.DownVotes<339 AND v.CreationDate>'2010-04-30 20:32:01'::timestamp AND v.CreationDate<'2012-07-25 09:48:18'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<13 AND b.Date>'2010-12-13 06:28:13'::timestamp AND b.Date<'2011-10-20 10:19:43'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-9 AND p.Score<136 AND p.CommentCount>4 AND p.CommentCount<12 AND u.DownVotes>22 AND u.DownVotes<1590 AND v.CreationDate>'2010-06-22 21:18:41'::timestamp AND v.CreationDate<'2011-10-11 07:50:47'::timestamp AND v.VoteTypeId>9 AND v.VoteTypeId<15 AND b.Date>'2011-08-13 18:49:32'::timestamp AND b.Date<'2011-10-04 01:52:05'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>29 AND p.Score<183 AND p.CommentCount>0 AND p.CommentCount<18 AND u.DownVotes>62 AND u.DownVotes<1731 AND v.CreationDate>'2010-06-26 05:02:16'::timestamp AND v.CreationDate<'2014-02-07 01:46:00'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<8 AND b.Date>'2010-08-14 14:12:52'::timestamp AND b.Date<'2011-06-30 08:48:44'::timestamp;
+
+/*+ HashJoin(v p u b)
+ NestLoop(v p u)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ IndexScan(u)
+ SeqScan(b)
+ Leading((((v p) u) b)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-4 AND p.Score<47 AND p.CommentCount>0 AND p.CommentCount<31 AND u.DownVotes>153 AND u.DownVotes<1688 AND v.CreationDate>'2010-05-09 17:50:40'::timestamp AND v.CreationDate<'2011-07-19 08:31:26'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<13 AND b.Date>'2012-03-28 08:23:49'::timestamp AND b.Date<'2014-09-04 00:55:27'::timestamp;
+
+/*+ HashJoin(v p u b)
+ NestLoop(u b)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ Leading(((v p) (u b))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>0 AND p.Score<85 AND p.CommentCount>1 AND p.CommentCount<32 AND u.DownVotes>437 AND u.DownVotes<1848 AND v.CreationDate>'2011-03-03 18:31:47'::timestamp AND v.CreationDate<'2012-12-19 14:58:22'::timestamp AND v.VoteTypeId>8 AND v.VoteTypeId<15 AND b.Date>'2011-10-15 23:15:10'::timestamp AND b.Date<'2013-10-30 18:03:20'::timestamp;
+
+/*+ NestLoop(p u b v)
+ NestLoop(p u b)
+ NestLoop(p u)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((p u) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>63 AND p.Score<172 AND p.CommentCount>4 AND p.CommentCount<17 AND u.DownVotes>296 AND u.DownVotes<784 AND v.CreationDate>'2011-10-13 00:37:09'::timestamp AND v.CreationDate<'2012-08-28 21:04:04'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<10 AND b.Date>'2013-07-18 11:39:08'::timestamp AND b.Date<'2014-04-01 21:07:04'::timestamp;
+
+/*+ NestLoop(u b p v)
+ NestLoop(u b p)
+ NestLoop(u b)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(p)
+ IndexScan(v)
+ Leading((((u b) p) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-2 AND p.Score<94 AND p.CommentCount>9 AND p.CommentCount<21 AND u.DownVotes>282 AND u.DownVotes<1857 AND v.CreationDate>'2011-03-14 03:19:35'::timestamp AND v.CreationDate<'2011-09-15 02:03:23'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<13 AND b.Date>'2011-11-01 05:26:21'::timestamp AND b.Date<'2011-11-21 13:38:50'::timestamp;
+
+/*+ HashJoin(v p b u)
+ HashJoin(b u)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ SeqScan(b)
+ IndexScan(u)
+ Leading(((v p) (b u))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>48 AND p.Score<113 AND p.CommentCount>5 AND p.CommentCount<21 AND u.DownVotes>391 AND u.DownVotes<1056 AND v.CreationDate>'2010-01-18 13:26:21'::timestamp AND v.CreationDate<'2013-11-30 10:16:50'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<5 AND b.Date>'2010-08-11 12:07:12'::timestamp AND b.Date<'2014-02-10 06:51:27'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>14 AND p.Score<84 AND p.CommentCount>6 AND p.CommentCount<35 AND u.DownVotes>12 AND u.DownVotes<1645 AND v.CreationDate>'2009-12-31 18:03:00'::timestamp AND v.CreationDate<'2012-12-23 08:24:24'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<8 AND b.Date>'2013-10-01 03:37:58'::timestamp AND b.Date<'2014-02-28 06:19:58'::timestamp;
+
+/*+ HashJoin(v p b u)
+ HashJoin(b u)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ SeqScan(b)
+ IndexScan(u)
+ Leading(((v p) (b u))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-5 AND p.Score<60 AND p.CommentCount>2 AND p.CommentCount<40 AND u.DownVotes>639 AND u.DownVotes<1229 AND v.CreationDate>'2009-10-12 23:49:58'::timestamp AND v.CreationDate<'2012-04-13 19:32:36'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<13 AND b.Date>'2011-09-02 17:54:53'::timestamp AND b.Date<'2013-06-29 03:59:32'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>10 AND p.Score<177 AND p.CommentCount>26 AND p.CommentCount<37 AND u.DownVotes>92 AND u.DownVotes<733 AND v.CreationDate>'2012-01-20 06:33:52'::timestamp AND v.CreationDate<'2013-04-12 12:13:31'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<12 AND b.Date>'2012-04-24 04:55:54'::timestamp AND b.Date<'2013-01-11 15:25:52'::timestamp;
+
+/*+ HashJoin(u b p v)
+ NestLoop(p v)
+ NestLoop(u b)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(p)
+ IndexScan(v)
+ Leading(((u b) (p v))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>52 AND p.Score<135 AND p.CommentCount>24 AND p.CommentCount<37 AND u.DownVotes>106 AND u.DownVotes<1910 AND v.CreationDate>'2009-03-14 12:00:42'::timestamp AND v.CreationDate<'2013-07-16 18:01:47'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<6 AND b.Date>'2012-02-03 16:24:53'::timestamp AND b.Date<'2012-11-02 09:19:58'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-15 AND p.Score<184 AND p.CommentCount>8 AND p.CommentCount<37 AND u.DownVotes>470 AND u.DownVotes<1703 AND v.CreationDate>'2009-04-23 18:56:19'::timestamp AND v.CreationDate<'2012-07-23 08:00:20'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<6 AND b.Date>'2012-04-16 15:57:28'::timestamp AND b.Date<'2013-06-01 17:49:58'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>58 AND p.Score<158 AND p.CommentCount>2 AND p.CommentCount<40 AND u.DownVotes>8 AND u.DownVotes<1321 AND v.CreationDate>'2009-11-04 14:21:08'::timestamp AND v.CreationDate<'2011-10-18 09:55:14'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<8 AND b.Date>'2012-11-23 19:02:29'::timestamp AND b.Date<'2013-07-11 17:05:13'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>55 AND p.Score<128 AND p.CommentCount>7 AND p.CommentCount<18 AND u.DownVotes>57 AND u.DownVotes<1472 AND v.CreationDate>'2011-07-25 01:16:03'::timestamp AND v.CreationDate<'2014-01-04 02:58:51'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<7 AND b.Date>'2012-05-22 03:26:02'::timestamp AND b.Date<'2013-11-26 02:19:02'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-18 AND p.Score<86 AND p.CommentCount>3 AND p.CommentCount<39 AND u.DownVotes>394 AND u.DownVotes<1203 AND v.CreationDate>'2010-12-04 21:15:39'::timestamp AND v.CreationDate<'2011-01-26 09:44:34'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<15 AND b.Date>'2011-06-17 19:18:34'::timestamp AND b.Date<'2012-12-31 08:00:06'::timestamp;
+
+/*+ NestLoop(u p b v)
+ MergeJoin(u p b)
+ MergeJoin(u p)
+ SeqScan(u)
+ SeqScan(p)
+ SeqScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>12 AND p.Score<156 AND p.CommentCount>8 AND p.CommentCount<42 AND u.DownVotes>346 AND u.DownVotes<617 AND v.CreationDate>'2010-01-22 23:53:13'::timestamp AND v.CreationDate<'2013-10-12 15:15:54'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<14 AND b.Date>'2011-06-16 06:06:00'::timestamp AND b.Date<'2014-06-11 17:29:56'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>1 AND p.Score<11 AND p.CommentCount>3 AND p.CommentCount<18 AND u.DownVotes>272 AND u.DownVotes<513 AND v.CreationDate>'2010-12-03 22:53:09'::timestamp AND v.CreationDate<'2014-03-27 13:16:37'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<7 AND b.Date>'2013-02-24 15:09:07'::timestamp AND b.Date<'2013-11-23 10:57:29'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-15 AND p.Score<94 AND p.CommentCount>5 AND p.CommentCount<22 AND u.DownVotes>366 AND u.DownVotes<939 AND v.CreationDate>'2009-04-21 10:10:13'::timestamp AND v.CreationDate<'2014-02-26 14:21:10'::timestamp AND v.VoteTypeId>5 AND v.VoteTypeId<15 AND b.Date>'2011-12-06 15:34:27'::timestamp AND b.Date<'2013-11-17 23:40:03'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>10 AND p.Score<137 AND p.CommentCount>3 AND p.CommentCount<24 AND u.DownVotes>641 AND u.DownVotes<879 AND v.CreationDate>'2014-01-21 00:02:00'::timestamp AND v.CreationDate<'2014-06-27 21:47:01'::timestamp AND v.VoteTypeId>8 AND v.VoteTypeId<11 AND b.Date>'2011-12-08 23:59:33'::timestamp AND b.Date<'2012-09-04 10:23:35'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-15 AND p.Score<105 AND p.CommentCount>1 AND p.CommentCount<41 AND u.DownVotes>152 AND u.DownVotes<1658 AND v.CreationDate>'2009-10-03 22:52:20'::timestamp AND v.CreationDate<'2012-10-03 11:22:35'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<15 AND b.Date>'2014-05-26 12:23:33'::timestamp AND b.Date<'2014-07-21 12:58:32'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>71 AND p.Score<158 AND p.CommentCount>1 AND p.CommentCount<14 AND u.DownVotes>494 AND u.DownVotes<1055 AND v.CreationDate>'2012-06-14 10:34:12'::timestamp AND v.CreationDate<'2012-07-23 07:29:19'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<14 AND b.Date>'2011-05-13 19:01:15'::timestamp AND b.Date<'2011-08-09 12:50:18'::timestamp;
+
+/*+ NestLoop(p u b v)
+ NestLoop(p u b)
+ NestLoop(p u)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((p u) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>2 AND p.Score<104 AND p.CommentCount>17 AND p.CommentCount<44 AND u.DownVotes>3 AND u.DownVotes<833 AND v.CreationDate>'2010-12-29 17:30:22'::timestamp AND v.CreationDate<'2012-04-29 15:57:15'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<15 AND b.Date>'2014-01-14 15:41:30'::timestamp AND b.Date<'2014-06-27 21:20:07'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>12 AND p.Score<45 AND p.CommentCount>1 AND p.CommentCount<30 AND u.DownVotes>727 AND u.DownVotes<1789 AND v.CreationDate>'2011-04-19 05:51:47'::timestamp AND v.CreationDate<'2013-08-17 03:30:59'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<15 AND b.Date>'2012-04-08 14:58:03'::timestamp AND b.Date<'2014-05-19 10:46:31'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-18 AND p.Score<29 AND p.CommentCount>5 AND p.CommentCount<27 AND u.DownVotes>221 AND u.DownVotes<900 AND v.CreationDate>'2011-04-23 14:45:08'::timestamp AND v.CreationDate<'2013-08-21 07:47:20'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<7 AND b.Date>'2013-12-25 14:19:31'::timestamp AND b.Date<'2014-07-26 00:00:19'::timestamp;
+
+/*+ HashJoin(v p u b)
+ NestLoop(v p u)
+ HashJoin(v p)
+ SeqScan(v)
+ IndexScan(p)
+ IndexScan(u)
+ SeqScan(b)
+ Leading((((v p) u) b)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>0 AND p.Score<152 AND p.CommentCount>1 AND p.CommentCount<21 AND u.DownVotes>266 AND u.DownVotes<1080 AND v.CreationDate>'2011-08-12 03:56:57'::timestamp AND v.CreationDate<'2013-11-04 22:10:00'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<9 AND b.Date>'2011-11-11 10:31:36'::timestamp AND b.Date<'2013-02-05 21:37:26'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>28 AND p.Score<176 AND p.CommentCount>15 AND p.CommentCount<35 AND u.DownVotes>139 AND u.DownVotes<1749 AND v.CreationDate>'2011-01-15 01:49:14'::timestamp AND v.CreationDate<'2011-06-25 02:23:25'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<13 AND b.Date>'2011-07-25 02:51:51'::timestamp AND b.Date<'2012-10-29 04:12:20'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>2 AND p.Score<62 AND p.CommentCount>14 AND p.CommentCount<19 AND u.DownVotes>409 AND u.DownVotes<1109 AND v.CreationDate>'2011-07-24 00:18:44'::timestamp AND v.CreationDate<'2014-01-17 14:02:49'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<3 AND b.Date>'2011-04-11 09:55:40'::timestamp AND b.Date<'2013-06-28 22:58:18'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-14 AND p.Score<46 AND p.CommentCount>3 AND p.CommentCount<27 AND u.DownVotes>414 AND u.DownVotes<1123 AND v.CreationDate>'2009-02-16 20:06:45'::timestamp AND v.CreationDate<'2014-02-09 19:20:16'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<7 AND b.Date>'2011-01-05 02:22:47'::timestamp AND b.Date<'2013-02-04 15:33:48'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-9 AND p.Score<71 AND p.CommentCount>6 AND p.CommentCount<31 AND u.DownVotes>697 AND u.DownVotes<1440 AND v.CreationDate>'2010-09-14 08:52:21'::timestamp AND v.CreationDate<'2012-06-26 12:11:49'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<7 AND b.Date>'2013-08-11 09:35:18'::timestamp AND b.Date<'2014-05-08 21:42:32'::timestamp;
+
+/*+ HashJoin(v p u b)
+ NestLoop(v p u)
+ HashJoin(v p)
+ SeqScan(v)
+ IndexScan(p)
+ IndexScan(u)
+ SeqScan(b)
+ Leading((((v p) u) b)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-14 AND p.Score<100 AND p.CommentCount>2 AND p.CommentCount<37 AND u.DownVotes>77 AND u.DownVotes<231 AND v.CreationDate>'2009-02-03 10:07:53'::timestamp AND v.CreationDate<'2010-07-20 19:49:58'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<8 AND b.Date>'2013-04-24 00:35:43'::timestamp AND b.Date<'2014-02-14 21:03:40'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-9 AND p.Score<77 AND p.CommentCount>3 AND p.CommentCount<9 AND u.DownVotes>261 AND u.DownVotes<1386 AND v.CreationDate>'2011-01-28 09:43:30'::timestamp AND v.CreationDate<'2013-05-27 21:21:26'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<11 AND b.Date>'2013-05-05 00:05:10'::timestamp AND b.Date<'2013-09-15 01:43:30'::timestamp;
+
+/*+ NestLoop(u p b v)
+ MergeJoin(u p b)
+ MergeJoin(u p)
+ SeqScan(u)
+ SeqScan(p)
+ SeqScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>97 AND p.Score<165 AND p.CommentCount>13 AND p.CommentCount<40 AND u.DownVotes>67 AND u.DownVotes<1013 AND v.CreationDate>'2010-06-06 23:15:25'::timestamp AND v.CreationDate<'2014-01-09 17:51:07'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<15 AND b.Date>'2010-10-23 11:49:02'::timestamp AND b.Date<'2012-12-27 03:28:25'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>17 AND p.Score<56 AND p.CommentCount>10 AND p.CommentCount<15 AND u.DownVotes>99 AND u.DownVotes<1723 AND v.CreationDate>'2010-05-07 16:48:04'::timestamp AND v.CreationDate<'2011-03-14 06:20:49'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<12 AND b.Date>'2011-02-14 10:35:26'::timestamp AND b.Date<'2011-11-23 06:49:45'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(v p u)
+ HashJoin(v p)
+ SeqScan(v)
+ IndexScan(p)
+ IndexScan(u)
+ SeqScan(b)
+ Leading((((v p) u) b)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-9 AND p.Score<5 AND p.CommentCount>5 AND p.CommentCount<42 AND u.DownVotes>29 AND u.DownVotes<169 AND v.CreationDate>'2010-11-10 18:39:32'::timestamp AND v.CreationDate<'2014-03-24 21:27:54'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<10 AND b.Date>'2011-09-12 08:15:51'::timestamp AND b.Date<'2014-08-13 16:33:01'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-3 AND p.Score<101 AND p.CommentCount>4 AND p.CommentCount<24 AND u.DownVotes>28 AND u.DownVotes<1660 AND v.CreationDate>'2009-11-21 13:10:27'::timestamp AND v.CreationDate<'2010-12-16 17:58:54'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<4 AND b.Date>'2012-02-15 04:10:12'::timestamp AND b.Date<'2012-07-04 06:50:41'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>27 AND p.Score<189 AND p.CommentCount>1 AND p.CommentCount<43 AND u.DownVotes>402 AND u.DownVotes<1899 AND v.CreationDate>'2011-12-04 18:59:34'::timestamp AND v.CreationDate<'2013-04-15 03:49:29'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<9 AND b.Date>'2010-08-24 19:38:07'::timestamp AND b.Date<'2011-05-24 03:56:54'::timestamp;
+
+/*+ NestLoop(p u b v)
+ NestLoop(p u b)
+ NestLoop(p u)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((p u) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-4 AND p.Score<157 AND p.CommentCount>32 AND p.CommentCount<38 AND u.DownVotes>57 AND u.DownVotes<651 AND v.CreationDate>'2012-01-06 07:46:38'::timestamp AND v.CreationDate<'2012-08-02 09:26:38'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<14 AND b.Date>'2012-08-15 08:23:31'::timestamp AND b.Date<'2013-09-17 03:07:24'::timestamp;
+
+/*+ HashJoin(p v u b)
+ NestLoop(u b)
+ NestLoop(p v)
+ IndexScan(p)
+ IndexScan(v)
+ IndexScan(u)
+ IndexScan(b)
+ Leading(((p v) (u b))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>0 AND p.Score<172 AND p.CommentCount>12 AND p.CommentCount<38 AND u.DownVotes>361 AND u.DownVotes<1841 AND v.CreationDate>'2009-04-06 11:29:12'::timestamp AND v.CreationDate<'2011-04-04 03:12:06'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<5 AND b.Date>'2010-08-28 10:35:30'::timestamp AND b.Date<'2014-04-04 05:30:31'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>16 AND p.Score<183 AND p.CommentCount>3 AND p.CommentCount<38 AND u.DownVotes>377 AND u.DownVotes<1884 AND v.CreationDate>'2011-01-07 22:26:46'::timestamp AND v.CreationDate<'2014-05-28 12:08:08'::timestamp AND v.VoteTypeId>9 AND v.VoteTypeId<14 AND b.Date>'2012-08-17 23:33:32'::timestamp AND b.Date<'2014-08-19 16:50:19'::timestamp;
+
+/*+ NestLoop(p u b v)
+ NestLoop(p u b)
+ NestLoop(p u)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((p u) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>15 AND p.Score<84 AND p.CommentCount>6 AND p.CommentCount<36 AND u.DownVotes>761 AND u.DownVotes<878 AND v.CreationDate>'2009-09-03 15:17:01'::timestamp AND v.CreationDate<'2013-08-08 01:41:19'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<10 AND b.Date>'2011-11-25 18:12:55'::timestamp AND b.Date<'2011-12-30 03:33:38'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-15 AND p.Score<24 AND p.CommentCount>4 AND p.CommentCount<41 AND u.DownVotes>590 AND u.DownVotes<1422 AND v.CreationDate>'2009-03-25 09:10:43'::timestamp AND v.CreationDate<'2012-12-29 00:42:56'::timestamp AND v.VoteTypeId>9 AND v.VoteTypeId<15 AND b.Date>'2013-08-25 20:49:16'::timestamp AND b.Date<'2014-05-16 00:13:54'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>15 AND p.Score<173 AND p.CommentCount>0 AND p.CommentCount<12 AND u.DownVotes>132 AND u.DownVotes<190 AND v.CreationDate>'2013-08-07 01:56:24'::timestamp AND v.CreationDate<'2014-01-15 00:07:57'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<6 AND b.Date>'2011-10-28 13:23:16'::timestamp AND b.Date<'2013-12-18 13:36:04'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>7 AND p.Score<40 AND p.CommentCount>0 AND p.CommentCount<24 AND u.DownVotes>378 AND u.DownVotes<1656 AND v.CreationDate>'2012-01-14 21:43:54'::timestamp AND v.CreationDate<'2014-07-02 11:06:30'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<6 AND b.Date>'2011-12-10 01:21:15'::timestamp AND b.Date<'2012-01-05 12:33:38'::timestamp;
+
+/*+ NestLoop(p u b v)
+ NestLoop(p u b)
+ NestLoop(p u)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((p u) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-8 AND p.Score<191 AND p.CommentCount>15 AND p.CommentCount<33 AND u.DownVotes>763 AND u.DownVotes<1308 AND v.CreationDate>'2009-04-23 11:03:44'::timestamp AND v.CreationDate<'2011-09-29 21:35:54'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<13 AND b.Date>'2012-02-01 05:13:08'::timestamp AND b.Date<'2013-06-16 22:28:38'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-10 AND p.Score<92 AND p.CommentCount>16 AND p.CommentCount<29 AND u.DownVotes>374 AND u.DownVotes<999 AND v.CreationDate>'2009-10-12 22:25:12'::timestamp AND v.CreationDate<'2012-03-13 03:03:33'::timestamp AND v.VoteTypeId>8 AND v.VoteTypeId<11 AND b.Date>'2012-08-21 13:42:59'::timestamp AND b.Date<'2014-06-08 11:46:13'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ IndexScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-10 AND p.Score<172 AND p.CommentCount>4 AND p.CommentCount<9 AND u.DownVotes>234 AND u.DownVotes<1623 AND v.CreationDate>'2011-01-29 06:53:57'::timestamp AND v.CreationDate<'2014-02-19 08:09:12'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<14 AND b.Date>'2013-04-27 17:14:52'::timestamp AND b.Date<'2014-01-16 06:55:31'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>80 AND p.Score<162 AND p.CommentCount>7 AND p.CommentCount<33 AND u.DownVotes>13 AND u.DownVotes<1397 AND v.CreationDate>'2013-07-04 00:23:00'::timestamp AND v.CreationDate<'2013-12-20 13:52:04'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<8 AND b.Date>'2011-01-23 23:15:53'::timestamp AND b.Date<'2012-05-07 10:34:36'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>114 AND p.Score<135 AND p.CommentCount>1 AND p.CommentCount<43 AND u.DownVotes>35 AND u.DownVotes<1792 AND v.CreationDate>'2010-03-30 08:15:14'::timestamp AND v.CreationDate<'2011-11-15 10:01:11'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<15 AND b.Date>'2011-05-20 23:37:20'::timestamp AND b.Date<'2013-11-22 19:37:41'::timestamp;
+
+/*+ MergeJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>44 AND p.Score<161 AND p.CommentCount>4 AND p.CommentCount<44 AND u.DownVotes>145 AND u.DownVotes<985 AND v.CreationDate>'2010-08-04 10:37:43'::timestamp AND v.CreationDate<'2013-06-29 10:08:33'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<4 AND b.Date>'2011-10-18 19:48:14'::timestamp AND b.Date<'2012-12-18 02:25:08'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>33 AND p.Score<44 AND p.CommentCount>4 AND p.CommentCount<16 AND u.DownVotes>409 AND u.DownVotes<1092 AND v.CreationDate>'2010-12-07 10:36:05'::timestamp AND v.CreationDate<'2013-02-17 10:39:25'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<9 AND b.Date>'2013-05-23 03:25:39'::timestamp AND b.Date<'2013-11-23 11:51:27'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>86 AND p.Score<159 AND p.CommentCount>6 AND p.CommentCount<13 AND u.DownVotes>429 AND u.DownVotes<1082 AND v.CreationDate>'2009-09-21 09:01:30'::timestamp AND v.CreationDate<'2014-01-15 07:13:40'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<6 AND b.Date>'2010-08-28 03:30:42'::timestamp AND b.Date<'2011-05-29 23:21:46'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>106 AND p.Score<186 AND p.CommentCount>2 AND p.CommentCount<12 AND u.DownVotes>354 AND u.DownVotes<1029 AND v.CreationDate>'2009-07-29 08:48:51'::timestamp AND v.CreationDate<'2012-03-07 22:41:56'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<7 AND b.Date>'2010-11-08 07:47:13'::timestamp AND b.Date<'2011-12-12 08:50:37'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>8 AND p.Score<106 AND p.CommentCount>11 AND p.CommentCount<15 AND u.DownVotes>742 AND u.DownVotes<1186 AND v.CreationDate>'2010-12-29 02:47:46'::timestamp AND v.CreationDate<'2011-11-19 12:04:46'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<6 AND b.Date>'2010-11-19 10:22:17'::timestamp AND b.Date<'2012-12-28 11:56:37'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>86 AND p.Score<167 AND p.CommentCount>4 AND p.CommentCount<22 AND u.DownVotes>166 AND u.DownVotes<1402 AND v.CreationDate>'2011-07-09 23:23:36'::timestamp AND v.CreationDate<'2012-06-13 04:10:58'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<15 AND b.Date>'2011-02-22 13:37:07'::timestamp AND b.Date<'2013-03-22 23:56:52'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>22 AND p.Score<53 AND p.CommentCount>13 AND p.CommentCount<44 AND u.DownVotes>77 AND u.DownVotes<1338 AND v.CreationDate>'2012-03-29 15:26:31'::timestamp AND v.CreationDate<'2014-04-09 17:26:57'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<12 AND b.Date>'2012-10-02 03:49:51'::timestamp AND b.Date<'2014-03-14 23:04:17'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>0 AND p.Score<171 AND p.CommentCount>6 AND p.CommentCount<34 AND u.DownVotes>186 AND u.DownVotes<1014 AND v.CreationDate>'2009-03-01 08:11:00'::timestamp AND v.CreationDate<'2011-07-17 19:57:25'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<9 AND b.Date>'2010-11-21 14:12:20'::timestamp AND b.Date<'2011-02-14 23:26:58'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-1 AND p.Score<27 AND p.CommentCount>19 AND p.CommentCount<44 AND u.DownVotes>772 AND u.DownVotes<1044 AND v.CreationDate>'2011-02-22 15:45:04'::timestamp AND v.CreationDate<'2011-09-01 23:48:02'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<13 AND b.Date>'2010-10-23 00:55:22'::timestamp AND b.Date<'2011-11-21 09:27:55'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-15 AND p.Score<14 AND p.CommentCount>8 AND p.CommentCount<44 AND u.DownVotes>35 AND u.DownVotes<709 AND v.CreationDate>'2009-09-23 03:57:34'::timestamp AND v.CreationDate<'2010-08-27 01:00:10'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<15 AND b.Date>'2013-10-18 12:48:29'::timestamp AND b.Date<'2014-08-29 14:39:07'::timestamp;
+
+/*+ NestLoop(p u b v)
+ NestLoop(p u b)
+ NestLoop(p u)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((p u) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-7 AND p.Score<102 AND p.CommentCount>17 AND p.CommentCount<44 AND u.DownVotes>453 AND u.DownVotes<1499 AND v.CreationDate>'2010-02-20 12:11:58'::timestamp AND v.CreationDate<'2012-12-07 04:25:32'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<11 AND b.Date>'2011-10-25 11:11:01'::timestamp AND b.Date<'2013-04-30 04:37:40'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>20 AND p.Score<94 AND p.CommentCount>0 AND p.CommentCount<20 AND u.DownVotes>314 AND u.DownVotes<1830 AND v.CreationDate>'2011-04-09 19:03:28'::timestamp AND v.CreationDate<'2011-09-17 15:35:02'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<10 AND b.Date>'2010-10-11 21:23:02'::timestamp AND b.Date<'2012-08-02 23:53:26'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ IndexScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-10 AND p.Score<160 AND p.CommentCount>3 AND p.CommentCount<26 AND u.DownVotes>330 AND u.DownVotes<1086 AND v.CreationDate>'2009-04-30 12:02:51'::timestamp AND v.CreationDate<'2013-09-01 08:09:01'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<9 AND b.Date>'2011-12-25 05:02:41'::timestamp AND b.Date<'2013-08-08 05:50:40'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>8 AND p.Score<113 AND p.CommentCount>12 AND p.CommentCount<44 AND u.DownVotes>154 AND u.DownVotes<1300 AND v.CreationDate>'2009-06-06 00:51:59'::timestamp AND v.CreationDate<'2012-08-27 01:30:05'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<15 AND b.Date>'2011-09-19 09:32:35'::timestamp AND b.Date<'2012-01-05 18:34:39'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>66 AND p.Score<100 AND p.CommentCount>8 AND p.CommentCount<34 AND u.DownVotes>85 AND u.DownVotes<1312 AND v.CreationDate>'2012-02-22 22:04:44'::timestamp AND v.CreationDate<'2014-04-05 13:29:13'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<8 AND b.Date>'2013-06-22 03:19:06'::timestamp AND b.Date<'2014-03-04 23:21:48'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>1 AND p.Score<28 AND p.CommentCount>14 AND p.CommentCount<44 AND u.DownVotes>82 AND u.DownVotes<1418 AND v.CreationDate>'2009-06-09 20:51:56'::timestamp AND v.CreationDate<'2012-08-19 01:03:14'::timestamp AND v.VoteTypeId>5 AND v.VoteTypeId<13 AND b.Date>'2011-02-03 01:41:34'::timestamp AND b.Date<'2013-06-14 06:59:41'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-14 AND p.Score<150 AND p.CommentCount>4 AND p.CommentCount<25 AND u.DownVotes>575 AND u.DownVotes<1462 AND v.CreationDate>'2009-04-27 05:14:43'::timestamp AND v.CreationDate<'2012-11-14 11:59:20'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<7 AND b.Date>'2013-06-10 13:12:10'::timestamp AND b.Date<'2014-05-17 19:51:23'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>14 AND p.Score<72 AND p.CommentCount>5 AND p.CommentCount<10 AND u.DownVotes>192 AND u.DownVotes<731 AND v.CreationDate>'2010-04-28 17:34:19'::timestamp AND v.CreationDate<'2012-07-06 04:18:11'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<15 AND b.Date>'2011-05-10 04:26:17'::timestamp AND b.Date<'2012-05-22 14:50:14'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>99 AND p.Score<142 AND p.CommentCount>8 AND p.CommentCount<40 AND u.DownVotes>99 AND u.DownVotes<196 AND v.CreationDate>'2010-02-07 01:30:16'::timestamp AND v.CreationDate<'2012-10-06 09:59:17'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<11 AND b.Date>'2012-12-12 00:29:56'::timestamp AND b.Date<'2013-12-01 04:03:51'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>27 AND p.Score<102 AND p.CommentCount>4 AND p.CommentCount<35 AND u.DownVotes>300 AND u.DownVotes<971 AND v.CreationDate>'2010-11-19 08:30:38'::timestamp AND v.CreationDate<'2014-04-25 09:31:53'::timestamp AND v.VoteTypeId>8 AND v.VoteTypeId<14 AND b.Date>'2010-10-20 15:10:59'::timestamp AND b.Date<'2012-04-28 18:52:43'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>64 AND p.Score<175 AND p.CommentCount>3 AND p.CommentCount<21 AND u.DownVotes>582 AND u.DownVotes<934 AND v.CreationDate>'2010-04-21 11:00:55'::timestamp AND v.CreationDate<'2013-02-10 12:25:31'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<12 AND b.Date>'2013-04-02 09:35:44'::timestamp AND b.Date<'2014-05-27 03:02:17'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>30 AND p.Score<126 AND p.CommentCount>4 AND p.CommentCount<28 AND u.DownVotes>349 AND u.DownVotes<1697 AND v.CreationDate>'2009-11-16 14:56:48'::timestamp AND v.CreationDate<'2013-09-03 04:41:06'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<9 AND b.Date>'2010-09-27 02:48:19'::timestamp AND b.Date<'2012-12-02 10:48:33'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-16 AND p.Score<154 AND p.CommentCount>4 AND p.CommentCount<7 AND u.DownVotes>632 AND u.DownVotes<1671 AND v.CreationDate>'2010-08-26 01:07:54'::timestamp AND v.CreationDate<'2014-04-01 18:50:06'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<6 AND b.Date>'2012-05-10 21:53:53'::timestamp AND b.Date<'2012-09-30 20:44:26'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-8 AND p.Score<142 AND p.CommentCount>11 AND p.CommentCount<37 AND u.DownVotes>307 AND u.DownVotes<776 AND v.CreationDate>'2012-07-12 06:09:28'::timestamp AND v.CreationDate<'2014-07-31 09:30:06'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<7 AND b.Date>'2012-11-17 19:58:54'::timestamp AND b.Date<'2013-12-26 19:49:34'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>18 AND p.Score<74 AND p.CommentCount>0 AND p.CommentCount<5 AND u.DownVotes>12 AND u.DownVotes<1915 AND v.CreationDate>'2012-01-27 03:14:34'::timestamp AND v.CreationDate<'2014-04-14 22:58:22'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<10 AND b.Date>'2013-01-19 12:45:28'::timestamp AND b.Date<'2014-05-11 05:13:16'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-7 AND p.Score<6 AND p.CommentCount>4 AND p.CommentCount<28 AND u.DownVotes>311 AND u.DownVotes<607 AND v.CreationDate>'2010-05-18 03:18:53'::timestamp AND v.CreationDate<'2011-12-13 14:17:07'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<8 AND b.Date>'2012-10-02 23:56:13'::timestamp AND b.Date<'2014-06-09 08:38:17'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>32 AND p.Score<164 AND p.CommentCount>5 AND p.CommentCount<16 AND u.DownVotes>88 AND u.DownVotes<176 AND v.CreationDate>'2012-03-15 11:38:57'::timestamp AND v.CreationDate<'2014-01-30 19:00:40'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<14 AND b.Date>'2010-09-16 22:47:06'::timestamp AND b.Date<'2013-07-02 11:22:29'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>94 AND p.Score<185 AND p.CommentCount>6 AND p.CommentCount<38 AND u.DownVotes>61 AND u.DownVotes<1046 AND v.CreationDate>'2009-05-20 17:05:10'::timestamp AND v.CreationDate<'2013-01-23 01:24:57'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<12 AND b.Date>'2012-08-23 01:09:09'::timestamp AND b.Date<'2012-11-04 07:34:06'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>35 AND p.Score<42 AND p.CommentCount>5 AND p.CommentCount<29 AND u.DownVotes>485 AND u.DownVotes<1240 AND v.CreationDate>'2010-03-23 16:10:27'::timestamp AND v.CreationDate<'2013-03-02 14:14:07'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<4 AND b.Date>'2012-04-03 11:13:47'::timestamp AND b.Date<'2014-08-23 12:13:22'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>66 AND p.Score<83 AND p.CommentCount>4 AND p.CommentCount<24 AND u.DownVotes>642 AND u.DownVotes<1542 AND v.CreationDate>'2012-04-08 03:27:21'::timestamp AND v.CreationDate<'2014-08-12 12:16:53'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<7 AND b.Date>'2013-03-18 20:20:15'::timestamp AND b.Date<'2013-11-09 13:33:39'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>9 AND p.Score<107 AND p.CommentCount>9 AND p.CommentCount<28 AND u.DownVotes>604 AND u.DownVotes<1321 AND v.CreationDate>'2011-07-19 10:39:56'::timestamp AND v.CreationDate<'2013-03-26 11:00:26'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<6 AND b.Date>'2010-08-14 21:43:07'::timestamp AND b.Date<'2014-02-21 09:50:08'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-5 AND p.Score<43 AND p.CommentCount>10 AND p.CommentCount<29 AND u.DownVotes>378 AND u.DownVotes<1457 AND v.CreationDate>'2010-04-02 15:29:17'::timestamp AND v.CreationDate<'2013-01-25 07:35:48'::timestamp AND v.VoteTypeId>9 AND v.VoteTypeId<12 AND b.Date>'2012-06-09 14:27:37'::timestamp AND b.Date<'2012-11-29 23:33:29'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>13 AND p.Score<111 AND p.CommentCount>12 AND p.CommentCount<23 AND u.DownVotes>70 AND u.DownVotes<162 AND v.CreationDate>'2010-02-17 08:15:05'::timestamp AND v.CreationDate<'2014-02-28 05:15:31'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<7 AND b.Date>'2012-02-11 11:26:50'::timestamp AND b.Date<'2014-04-02 07:23:30'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>11 AND p.Score<179 AND p.CommentCount>4 AND p.CommentCount<21 AND u.DownVotes>117 AND u.DownVotes<310 AND v.CreationDate>'2009-11-16 02:58:02'::timestamp AND v.CreationDate<'2013-11-19 03:37:12'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<9 AND b.Date>'2012-06-10 07:11:24'::timestamp AND b.Date<'2013-09-27 12:49:39'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>57 AND p.Score<106 AND p.CommentCount>4 AND p.CommentCount<42 AND u.DownVotes>24 AND u.DownVotes<1198 AND v.CreationDate>'2012-08-15 10:33:02'::timestamp AND v.CreationDate<'2012-08-28 15:39:54'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<11 AND b.Date>'2010-08-06 22:24:39'::timestamp AND b.Date<'2012-11-30 21:35:30'::timestamp;
+
+/*+ HashJoin(v p b u)
+ HashJoin(b u)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ SeqScan(b)
+ IndexScan(u)
+ Leading(((v p) (b u))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-14 AND p.Score<80 AND p.CommentCount>3 AND p.CommentCount<21 AND u.DownVotes>363 AND u.DownVotes<1535 AND v.CreationDate>'2012-02-03 11:28:32'::timestamp AND v.CreationDate<'2013-02-22 19:23:48'::timestamp AND v.VoteTypeId>9 AND v.VoteTypeId<15 AND b.Date>'2012-07-01 11:34:41'::timestamp AND b.Date<'2013-10-26 18:47:26'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>36 AND p.Score<155 AND p.CommentCount>5 AND p.CommentCount<32 AND u.DownVotes>732 AND u.DownVotes<831 AND v.CreationDate>'2009-10-07 12:12:24'::timestamp AND v.CreationDate<'2010-12-10 05:59:32'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<15 AND b.Date>'2014-05-25 23:35:08'::timestamp AND b.Date<'2014-07-23 20:33:09'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-17 AND p.Score<86 AND p.CommentCount>2 AND p.CommentCount<18 AND u.DownVotes>290 AND u.DownVotes<604 AND v.CreationDate>'2009-06-23 22:35:26'::timestamp AND v.CreationDate<'2012-05-28 11:32:05'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<5 AND b.Date>'2011-07-15 16:00:51'::timestamp AND b.Date<'2012-11-13 21:53:56'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>5 AND p.Score<138 AND p.CommentCount>7 AND p.CommentCount<42 AND u.DownVotes>346 AND u.DownVotes<1025 AND v.CreationDate>'2012-05-07 21:23:26'::timestamp AND v.CreationDate<'2013-01-19 11:25:53'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<15 AND b.Date>'2011-04-19 10:13:06'::timestamp AND b.Date<'2012-10-25 11:52:02'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-15 AND p.Score<57 AND p.CommentCount>0 AND p.CommentCount<34 AND u.DownVotes>215 AND u.DownVotes<755 AND v.CreationDate>'2010-02-09 15:06:25'::timestamp AND v.CreationDate<'2011-12-25 02:56:46'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<13 AND b.Date>'2011-05-28 01:28:33'::timestamp AND b.Date<'2013-06-28 16:06:45'::timestamp;
+
+/*+ HashJoin(v p b u)
+ HashJoin(b u)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ SeqScan(b)
+ IndexScan(u)
+ Leading(((v p) (b u))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-2 AND p.Score<116 AND p.CommentCount>13 AND p.CommentCount<17 AND u.DownVotes>559 AND u.DownVotes<1561 AND v.CreationDate>'2012-04-26 08:32:22'::timestamp AND v.CreationDate<'2012-05-22 02:39:17'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<15 AND b.Date>'2012-08-18 01:46:07'::timestamp AND b.Date<'2014-08-29 17:23:38'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-5 AND p.Score<129 AND p.CommentCount>13 AND p.CommentCount<38 AND u.DownVotes>361 AND u.DownVotes<1680 AND v.CreationDate>'2009-08-16 11:37:36'::timestamp AND v.CreationDate<'2014-07-19 08:09:02'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<7 AND b.Date>'2012-06-18 05:47:17'::timestamp AND b.Date<'2014-01-10 13:46:21'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>10 AND p.Score<153 AND p.CommentCount>1 AND p.CommentCount<15 AND u.DownVotes>147 AND u.DownVotes<1899 AND v.CreationDate>'2012-02-13 20:43:51'::timestamp AND v.CreationDate<'2012-03-04 08:22:34'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<8 AND b.Date>'2012-03-27 06:02:20'::timestamp AND b.Date<'2012-08-22 20:59:21'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>8 AND p.Score<122 AND p.CommentCount>6 AND p.CommentCount<43 AND u.DownVotes>334 AND u.DownVotes<1906 AND v.CreationDate>'2009-02-03 08:44:04'::timestamp AND v.CreationDate<'2010-12-14 06:54:19'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<8 AND b.Date>'2010-12-17 16:55:27'::timestamp AND b.Date<'2013-03-28 18:54:58'::timestamp;
+
+/*+ MergeJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>13 AND p.Score<137 AND p.CommentCount>7 AND p.CommentCount<26 AND u.DownVotes>108 AND u.DownVotes<1682 AND v.CreationDate>'2010-12-13 15:13:29'::timestamp AND v.CreationDate<'2014-05-27 22:44:12'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<14 AND b.Date>'2013-03-11 11:17:23'::timestamp AND b.Date<'2013-11-12 15:52:39'::timestamp;
+
+/*+ HashJoin(v b p u)
+ HashJoin(b p u)
+ NestLoop(p u)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(p)
+ IndexScan(u)
+ Leading((v (b (p u)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>127 AND p.Score<186 AND p.CommentCount>7 AND p.CommentCount<16 AND u.DownVotes>486 AND u.DownVotes<1887 AND v.CreationDate>'2011-02-09 02:55:08'::timestamp AND v.CreationDate<'2013-03-27 16:37:15'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<10 AND b.Date>'2013-03-12 05:52:45'::timestamp AND b.Date<'2014-06-04 01:53:12'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>81 AND p.Score<169 AND p.CommentCount>1 AND p.CommentCount<12 AND u.DownVotes>633 AND u.DownVotes<1736 AND v.CreationDate>'2011-08-24 11:16:26'::timestamp AND v.CreationDate<'2014-06-01 15:29:33'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<11 AND b.Date>'2011-03-20 17:06:01'::timestamp AND b.Date<'2013-02-09 01:04:22'::timestamp;
+
+/*+ NestLoop(u b p v)
+ NestLoop(u b p)
+ NestLoop(u b)
+ SeqScan(u)
+ IndexScan(b)
+ IndexScan(p)
+ IndexScan(v)
+ Leading((((u b) p) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>20 AND p.Score<124 AND p.CommentCount>4 AND p.CommentCount<17 AND u.DownVotes>524 AND u.DownVotes<1265 AND v.CreationDate>'2009-03-23 16:11:38'::timestamp AND v.CreationDate<'2014-05-26 19:20:40'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<9 AND b.Date>'2010-09-01 02:16:34'::timestamp AND b.Date<'2010-11-15 22:17:16'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>4 AND p.Score<41 AND p.CommentCount>8 AND p.CommentCount<26 AND u.DownVotes>185 AND u.DownVotes<683 AND v.CreationDate>'2010-11-01 13:27:44'::timestamp AND v.CreationDate<'2011-08-05 20:32:52'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<12 AND b.Date>'2013-08-29 11:44:54'::timestamp AND b.Date<'2013-12-18 19:10:37'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-5 AND p.Score<187 AND p.CommentCount>5 AND p.CommentCount<7 AND u.DownVotes>315 AND u.DownVotes<380 AND v.CreationDate>'2009-11-08 22:59:09'::timestamp AND v.CreationDate<'2011-09-13 20:47:08'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<10 AND b.Date>'2012-12-23 06:13:28'::timestamp AND b.Date<'2013-09-16 03:51:02'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>8 AND p.Score<163 AND p.CommentCount>2 AND p.CommentCount<31 AND u.DownVotes>154 AND u.DownVotes<419 AND v.CreationDate>'2009-06-01 08:13:01'::timestamp AND v.CreationDate<'2014-01-04 01:16:22'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<5 AND b.Date>'2011-02-26 07:21:32'::timestamp AND b.Date<'2012-08-15 15:37:55'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>31 AND p.Score<169 AND p.CommentCount>1 AND p.CommentCount<23 AND u.DownVotes>187 AND u.DownVotes<524 AND v.CreationDate>'2010-11-26 10:14:58'::timestamp AND v.CreationDate<'2011-03-04 02:37:51'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<14 AND b.Date>'2013-09-01 12:58:20'::timestamp AND b.Date<'2014-04-28 23:11:21'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-8 AND p.Score<47 AND p.CommentCount>6 AND p.CommentCount<43 AND u.DownVotes>348 AND u.DownVotes<1408 AND v.CreationDate>'2009-06-05 10:20:04'::timestamp AND v.CreationDate<'2012-12-10 12:55:12'::timestamp AND v.VoteTypeId>5 AND v.VoteTypeId<9 AND b.Date>'2010-08-08 07:37:29'::timestamp AND b.Date<'2013-03-04 16:30:25'::timestamp;
+
+/*+ NestLoop(p u b v)
+ NestLoop(p u b)
+ NestLoop(p u)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((p u) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>43 AND p.Score<78 AND p.CommentCount>0 AND p.CommentCount<41 AND u.DownVotes>660 AND u.DownVotes<1706 AND v.CreationDate>'2010-12-09 13:47:55'::timestamp AND v.CreationDate<'2013-04-02 05:35:34'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<14 AND b.Date>'2010-11-13 12:13:58'::timestamp AND b.Date<'2011-03-17 14:28:41'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-8 AND p.Score<115 AND p.CommentCount>2 AND p.CommentCount<17 AND u.DownVotes>499 AND u.DownVotes<1589 AND v.CreationDate>'2013-01-12 14:01:02'::timestamp AND v.CreationDate<'2014-06-04 10:07:46'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<15 AND b.Date>'2010-12-03 13:46:46'::timestamp AND b.Date<'2011-01-21 16:42:40'::timestamp;
+
+/*+ HashJoin(v u b p)
+ NestLoop(u b p)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(u)
+ IndexScan(b)
+ IndexScan(p)
+ Leading((v ((u b) p))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>3 AND p.Score<49 AND p.CommentCount>12 AND p.CommentCount<30 AND u.DownVotes>52 AND u.DownVotes<1281 AND v.CreationDate>'2012-08-09 11:12:13'::timestamp AND v.CreationDate<'2013-03-05 23:02:39'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<6 AND b.Date>'2011-01-09 09:49:30'::timestamp AND b.Date<'2011-01-25 15:48:17'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-9 AND p.Score<173 AND p.CommentCount>11 AND p.CommentCount<15 AND u.DownVotes>121 AND u.DownVotes<1466 AND v.CreationDate>'2009-10-19 08:06:04'::timestamp AND v.CreationDate<'2013-02-03 18:05:51'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<7 AND b.Date>'2011-07-24 09:40:58'::timestamp AND b.Date<'2012-06-11 08:12:27'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>50 AND p.Score<127 AND p.CommentCount>9 AND p.CommentCount<23 AND u.DownVotes>764 AND u.DownVotes<1522 AND v.CreationDate>'2009-07-25 11:46:51'::timestamp AND v.CreationDate<'2014-03-22 05:40:17'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<3 AND b.Date>'2012-02-06 15:53:52'::timestamp AND b.Date<'2012-07-04 06:43:31'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>16 AND p.Score<85 AND p.CommentCount>0 AND p.CommentCount<43 AND u.DownVotes>335 AND u.DownVotes<1182 AND v.CreationDate>'2010-02-19 03:06:00'::timestamp AND v.CreationDate<'2013-04-16 19:36:16'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<10 AND b.Date>'2011-04-07 05:58:53'::timestamp AND b.Date<'2014-06-24 14:05:29'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>67 AND p.Score<178 AND p.CommentCount>7 AND p.CommentCount<27 AND u.DownVotes>769 AND u.DownVotes<1038 AND v.CreationDate>'2009-05-23 09:37:45'::timestamp AND v.CreationDate<'2012-12-06 04:18:20'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<13 AND b.Date>'2011-05-26 09:25:23'::timestamp AND b.Date<'2011-11-13 04:35:22'::timestamp;
+
+/*+ HashJoin(v b u p)
+ HashJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-13 AND p.Score<187 AND p.CommentCount>2 AND p.CommentCount<37 AND u.DownVotes>262 AND u.DownVotes<1016 AND v.CreationDate>'2011-07-27 07:46:16'::timestamp AND v.CreationDate<'2012-07-22 06:55:40'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<14 AND b.Date>'2011-12-10 11:03:08'::timestamp AND b.Date<'2012-08-08 21:02:08'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>35 AND p.Score<77 AND p.CommentCount>0 AND p.CommentCount<32 AND u.DownVotes>23 AND u.DownVotes<703 AND v.CreationDate>'2011-01-01 05:42:45'::timestamp AND v.CreationDate<'2014-09-05 12:17:09'::timestamp AND v.VoteTypeId>8 AND v.VoteTypeId<14 AND b.Date>'2013-10-07 02:29:10'::timestamp AND b.Date<'2014-04-15 15:01:19'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>42 AND p.Score<135 AND p.CommentCount>1 AND p.CommentCount<41 AND u.DownVotes>64 AND u.DownVotes<1725 AND v.CreationDate>'2009-03-24 10:29:17'::timestamp AND v.CreationDate<'2014-08-31 16:13:44'::timestamp AND v.VoteTypeId>3 AND v.VoteTypeId<9 AND b.Date>'2011-04-29 00:15:05'::timestamp AND b.Date<'2013-02-07 18:15:09'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-3 AND p.Score<38 AND p.CommentCount>12 AND p.CommentCount<21 AND u.DownVotes>282 AND u.DownVotes<790 AND v.CreationDate>'2012-09-04 23:11:38'::timestamp AND v.CreationDate<'2014-06-02 20:57:38'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<11 AND b.Date>'2012-01-19 07:53:39'::timestamp AND b.Date<'2014-02-10 01:17:35'::timestamp;
+
+/*+ NestLoop(p u b v)
+ NestLoop(p u b)
+ NestLoop(p u)
+ IndexScan(p)
+ IndexScan(u)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((p u) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>102 AND p.Score<152 AND p.CommentCount>2 AND p.CommentCount<38 AND u.DownVotes>21 AND u.DownVotes<333 AND v.CreationDate>'2012-02-29 17:09:30'::timestamp AND v.CreationDate<'2012-09-29 18:38:04'::timestamp AND v.VoteTypeId>7 AND v.VoteTypeId<11 AND b.Date>'2012-03-02 15:05:59'::timestamp AND b.Date<'2013-05-18 21:57:20'::timestamp;
+
+/*+ NestLoop(u p b v)
+ NestLoop(u p b)
+ NestLoop(u p)
+ SeqScan(u)
+ IndexScan(p)
+ IndexScan(b)
+ IndexScan(v)
+ Leading((((u p) b) v)) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>56 AND p.Score<91 AND p.CommentCount>3 AND p.CommentCount<14 AND u.DownVotes>89 AND u.DownVotes<906 AND v.CreationDate>'2012-09-02 22:23:12'::timestamp AND v.CreationDate<'2014-04-01 10:31:03'::timestamp AND v.VoteTypeId>2 AND v.VoteTypeId<4 AND b.Date>'2011-12-03 06:35:14'::timestamp AND b.Date<'2012-08-26 00:39:08'::timestamp;
+
+/*+ HashJoin(v p b u)
+ HashJoin(b u)
+ NestLoop(v p)
+ SeqScan(v)
+ IndexScan(p)
+ SeqScan(b)
+ IndexScan(u)
+ Leading(((v p) (b u))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>8 AND p.Score<29 AND p.CommentCount>4 AND p.CommentCount<35 AND u.DownVotes>123 AND u.DownVotes<1073 AND v.CreationDate>'2009-09-29 12:30:31'::timestamp AND v.CreationDate<'2014-03-24 11:45:27'::timestamp AND v.VoteTypeId>6 AND v.VoteTypeId<13 AND b.Date>'2011-10-06 04:18:02'::timestamp AND b.Date<'2014-05-24 08:37:37'::timestamp;
+
+/*+ MergeJoin(v b u p)
+ MergeJoin(b u p)
+ NestLoop(u p)
+ SeqScan(v)
+ SeqScan(b)
+ SeqScan(u)
+ IndexScan(p)
+ Leading((v (b (u p)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>-17 AND p.Score<5 AND p.CommentCount>1 AND p.CommentCount<39 AND u.DownVotes>437 AND u.DownVotes<840 AND v.CreationDate>'2012-08-05 05:00:08'::timestamp AND v.CreationDate<'2013-08-28 22:02:36'::timestamp AND v.VoteTypeId>1 AND v.VoteTypeId<4 AND b.Date>'2010-11-10 13:03:00'::timestamp AND b.Date<'2010-12-07 18:21:25'::timestamp;
+
+/*+ HashJoin(v p u b)
+ HashJoin(p u b)
+ NestLoop(u b)
+ SeqScan(v)
+ SeqScan(p)
+ SeqScan(u)
+ IndexScan(b)
+ Leading((v (p (u b)))) */
+SELECT COUNT(*) FROM votes as v, posts as p, badges as b, users as u WHERE p.Id = v.PostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Score>11 AND p.Score<104 AND p.CommentCount>6 AND p.CommentCount<23 AND u.DownVotes>352 AND u.DownVotes<585 AND v.CreationDate>'2010-03-02 00:04:13'::timestamp AND v.CreationDate<'2012-05-18 05:35:09'::timestamp AND v.VoteTypeId>4 AND v.VoteTypeId<12 AND b.Date>'2011-04-11 01:35:19'::timestamp AND b.Date<'2014-07-11 15:32:53'::timestamp;
+

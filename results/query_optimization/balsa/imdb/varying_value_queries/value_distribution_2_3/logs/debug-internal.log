@@ -1,0 +1,19 @@
+{"time":"2025-09-24T02:36:10.222385398+08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-09-24T02:36:10.222397792+08:00","level":"INFO","msg":"created symlink","path":"/home/zizhongmeng/balsa/wandb/run-20250924_023610-6pjvkwy0/logs/debug-core.log"}
+{"time":"2025-09-24T02:36:10.343890569+08:00","level":"INFO","msg":"created new stream","id":"6pjvkwy0"}
+{"time":"2025-09-24T02:36:10.343929151+08:00","level":"INFO","msg":"stream: started","id":"6pjvkwy0"}
+{"time":"2025-09-24T02:36:10.343963334+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"6pjvkwy0"}
+{"time":"2025-09-24T02:36:10.343977827+08:00","level":"INFO","msg":"handler: started","stream_id":"6pjvkwy0"}
+{"time":"2025-09-24T02:36:10.344030701+08:00","level":"INFO","msg":"sender: started","stream_id":"6pjvkwy0"}
+{"time":"2025-09-24T02:36:11.159616692+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-09-24T03:25:57.242512836+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/mengzizhong-nanyang-technological-university-singapore/balsa/6pjvkwy0/file_stream\": dial tcp: lookup api.wandb.ai on 172.19.224.1:53: read udp 172.19.238.65:37474->172.19.224.1:53: i/o timeout"}
+{"time":"2025-09-24T03:26:11.586439062+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-09-24T03:26:21.672951562+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 172.19.238.65:58058->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-09-24T05:27:46.281499599+08:00","level":"INFO","msg":"stream: closing","id":"6pjvkwy0"}
+{"time":"2025-09-24T05:27:46.281652683+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-09-24T05:27:46.726996095+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-09-24T05:31:11.474506568+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-09-24T05:31:11.781262434+08:00","level":"INFO","msg":"handler: closed","stream_id":"6pjvkwy0"}
+{"time":"2025-09-24T05:31:11.781303058+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"6pjvkwy0"}
+{"time":"2025-09-24T05:31:11.78136674+08:00","level":"INFO","msg":"sender: closed","stream_id":"6pjvkwy0"}
+{"time":"2025-09-24T05:31:11.78142004+08:00","level":"INFO","msg":"stream: closed","id":"6pjvkwy0"}

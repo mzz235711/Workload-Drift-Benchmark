@@ -1,0 +1,18 @@
+{"time":"2025-09-18T03:05:55.205503887+08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-09-18T03:05:55.205518077+08:00","level":"INFO","msg":"created symlink","path":"/home/zizhongmeng/balsa/wandb/run-20250918_030555-bps2eo6l/logs/debug-core.log"}
+{"time":"2025-09-18T03:05:55.329549734+08:00","level":"INFO","msg":"created new stream","id":"bps2eo6l"}
+{"time":"2025-09-18T03:05:55.329588923+08:00","level":"INFO","msg":"stream: started","id":"bps2eo6l"}
+{"time":"2025-09-18T03:05:55.329631974+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"bps2eo6l"}
+{"time":"2025-09-18T03:05:55.329639503+08:00","level":"INFO","msg":"handler: started","stream_id":"bps2eo6l"}
+{"time":"2025-09-18T03:05:55.329673094+08:00","level":"INFO","msg":"sender: started","stream_id":"bps2eo6l"}
+{"time":"2025-09-18T03:05:56.069095326+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-09-18T04:19:42.550056266+08:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/files/mengzizhong-nanyang-technological-university-singapore/balsa/bps2eo6l/file_stream"}
+{"time":"2025-09-18T04:20:21.385493045+08:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/files/mengzizhong-nanyang-technological-university-singapore/balsa/bps2eo6l/file_stream"}
+{"time":"2025-09-18T06:10:49.128770734+08:00","level":"INFO","msg":"stream: closing","id":"bps2eo6l"}
+{"time":"2025-09-18T06:10:49.129501817+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-09-18T06:10:49.137682731+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-09-18T06:10:54.843810392+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-09-18T06:10:55.291311842+08:00","level":"INFO","msg":"handler: closed","stream_id":"bps2eo6l"}
+{"time":"2025-09-18T06:10:55.291332502+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"bps2eo6l"}
+{"time":"2025-09-18T06:10:55.291384634+08:00","level":"INFO","msg":"sender: closed","stream_id":"bps2eo6l"}
+{"time":"2025-09-18T06:10:55.291398728+08:00","level":"INFO","msg":"stream: closed","id":"bps2eo6l"}

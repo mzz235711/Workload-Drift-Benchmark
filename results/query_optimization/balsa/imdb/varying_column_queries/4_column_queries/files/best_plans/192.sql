@@ -1,0 +1,6 @@
+/*+ HashJoin(cast_info title)
+ SeqScan(cast_info)
+ SeqScan(title)
+ Leading((cast_info title)) */
+select count(*) from cast_info,title where title.id=cast_info.movie_id and title.production_year<125 and title.series_years>0 and title.episode_nr<20 and title.season_nr=0;
+
