@@ -9,12 +9,15 @@ The workloads `job-light-drift` and `stats-drift` used in the experiments are in
 ### Workload generation
 If you want to generate your own workload with drift, you can use the scripts in [`scripts/workload_generation`](scripts/workload_generation). [`generate_all_queries.py`](scripts/workload_generation/generate_all_queries.py) are used to generate queries for **Join drift**, **Column drift** and **Output drift**. After query generation done, you can split the queries based on join number, column number of output size. [`generate_multitable_beta_value_distribution.py`](scripts/workload_generation/generate_multitable_beta_value_distribution.py) is used to generate workload with **Value drift**, where you can modify the parameters of Beta distrition.
 
+## Evaluation Results
+All evaluation results are in [`results`](results)
+
 ## Cardinality estimation
 **MSCN**: [paper](https://www.cidrdb.org/cidr2019/papers/p101-kipf-cidr19.pdf), [code](https://github.com/andreaskipf/learnedcardinalities).
 
 **Robust-MSCN**: [paper](https://www.vldb.org/pvldb/vol16/p1520-negi.pdf), [code](https://github.com/learnedsystems/CEB).
 
-To evualte MSCN and Robust-MSCN easily, we modify them and put it here.
+To evualte MSCN and Robust-MSCN easily, we modify them and put it [`here`](baselines/MSCN-modified). You can run [`run_joblight.sh`] to evaluate JOB-light-drift, and run [`run_stats.sh`] to evaluate STATS-drift
 
 **ALECE**: [paper](https://www.vldb.org/pvldb/vol17/p197-li.pdf), [code](https://github.com/pfl-cs/ALECE).
 
