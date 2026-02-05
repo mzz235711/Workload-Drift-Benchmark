@@ -21,7 +21,7 @@ To evualte MSCN and Robust-MSCN easily, we modify them and put it [`here`](basel
 
 **ALECE**: [paper](https://www.vldb.org/pvldb/vol17/p197-li.pdf), [code](https://github.com/pfl-cs/ALECE).
 
-To evulate their impact on query optimization, we use **CardEst** ([paper](https://www.vldb.org/pvldb/vol15/p752-zhu.pdf), code(https://github.com/Nathaniel-Han/End-to-End-CardEst-Benchmark/tree/master)), which could replace the estimated cardinality of PostgreSQL with outer estimated cardinality. Thanks the authors provide the evaluation platform.
+To evulate their impact on query optimization, we use **CardEst** ([paper](https://www.vldb.org/pvldb/vol15/p752-zhu.pdf), [code](https://github.com/Nathaniel-Han/End-to-End-CardEst-Benchmark/tree/master)), which could replace the estimated cardinality of PostgreSQL with outer estimated cardinality. Thanks the authors provide the evaluation platform.
 
 ## Cost estimation
 **End-to-End**: [paper](https://dl.acm.org/doi/abs/10.14778/3368289.3368296), [code](https://github.com/greatji/Learning-based-cost-estimator).
@@ -32,7 +32,7 @@ To evulate their impact on query optimization, we use **CardEst** ([paper](https
 
 We use the implementation of **LCM** ([paper](https://dl.acm.org/doi/10.1145/3725309), [code](https://github.com/DataManagementLab/lcm-eval/tree/main)). Thanks the authors provide a unified platform for convient cost estimation evaluation.
 
-To evaluate the impact on query optimization, we use a modified Bao at here, which could provide hints to PostgreSQL.
+To evaluate the impact on query optimization, we use a modified Bao at [here](baselines/Bao-modified), which could provide hints to PostgreSQL. You can run [`end_to_end.sh`] for evaluation. The workloads for evaluation could be downloaded from [here](https://drive.google.com/file/d/1q4dPOjZ3gygLoKqlY7NXGvyde25GdZ86/view?usp=sharing).
 
 ## Query optimizatiom
 **Bao**: [paper](https://dl.acm.org/doi/10.1145/3448016.3452838), [code](https://github.com/learnedsystems/BaoForPostgreSQL/tree/master).
