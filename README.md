@@ -1,5 +1,5 @@
 # Workload-Drift-Benchmark
-A benchmark for evaluating the performance of workload-driven database components under workload drift.
+This repo contains the benchmark workloads and related codes of our [SIGMOD 2026 paper](https://dl.acm.org/doi/10.1145/3802014) for evaluating the performance of workload-driven database components under workload drift.
 
 ## Datasets and Workloads
 Download the [datasets](https://drive.google.com/drive/folders/1WWXcg2-nDJiaa3vxSJtwwOBzGYcorUnz?usp=sharing) and import them into PostgreSQL. You can use the scripts in [`scripts/load_data.py`](scripts/load_data.py) to create databases, import data form file, and create indexes.
